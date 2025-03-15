@@ -1,14 +1,21 @@
 <template>
-  <nav class="bg-gray-900 text-white p-5 shadow-md flex justify-between items-center">
-    <router-link to="/" class="flex items-center gap-4">
-      <img src="/src/assets/images/logo-gaudium.jpg" alt="Gaudium Logo" class="h-12">
-      <h1 class="text-2xl font-bold tracking-wide hover:text-green-400 transition">Gaudium2022</h1>
-    </router-link>
-    <div class="flex gap-6 text-lg">
-      <router-link to="/" class="hover:text-green-400 transition">Domů</router-link>
-      <router-link to="/formamnon" class="hover:text-green-400 transition">Formamnon</router-link>
-      <router-link to="/sanusdent" class="hover:text-green-400 transition">Sanusdent</router-link>
-      <router-link to="/contact" class="hover:text-green-400 transition">Kontakt</router-link>
+  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50 py-4">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <router-link to="/" class="flex items-center">
+        <img src="/src/assets/images/logo-gaudium.jpg" alt="Gaudium Logo" class="h-16" />
+      </router-link>
+      <ul class="flex space-x-6 text-lg font-semibold text-gray-700">
+        <li><router-link to="/" class="hover:text-blue-600 transition">Domů</router-link></li>
+        <li><router-link to="/formamnon" class="hover:text-blue-600 transition">Formamnon</router-link></li>
+        <li><router-link to="/sanusdent" class="hover:text-blue-600 transition">Sanusdent</router-link></li>
+        <li><router-link to="/contact" class="hover:text-blue-600 transition">Kontakt</router-link></li>
+      </ul>
     </div>
   </nav>
 </template>
+
+<style scoped>
+nav {
+  padding: 1rem 2rem;
+}
+</style>

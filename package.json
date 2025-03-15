@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@pdftron/webviewer": "^11.3.0",
+    "leaflet": "^1.9.4",
+    "particles.js": "^2.0.0",
     "pdfjs-dist": "^3.4.120",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
