@@ -1,12 +1,14 @@
 <template>
-  <div class="home flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center px-6 pt-28 font-sans">
-    <h1 class="text-5xl font-extrabold text-gray-900 mb-8 animate-fade-in tracking-wide">Vítejte na stránkách Gaudium2022 s.r.o.</h1>
-    <p class="text-xl text-gray-700 max-w-3xl animate-slide-up leading-relaxed">
+  <div class="home flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center px-4 sm:px-6 md:px-12 pt-40 font-sans">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 tracking-wide animate-slide-down">
+      Vítejte na stránkách Gaudium2022 s.r.o.
+    </h1>
+    <p class="text-lg sm:text-xl text-gray-700 max-w-3xl leading-relaxed animate-fade-in">
       Jsme specialisté na vývoj a výrobu inovativní přírodní kosmetiky, která podporuje zdraví pokožky a celkovou pohodu.
     </p>
 
     <!-- About Section -->
-    <div class="mt-16 max-w-4xl text-center px-6 py-8 bg-white rounded-xl shadow-lg">
+    <div class="mt-16 max-w-4xl text-center px-4 sm:px-6 py-8 bg-white rounded-xl shadow-lg">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">O nás</h2>
       <p class="text-lg text-gray-700 leading-relaxed">
         Naše společnost byla založena v roce 2022 a specializuje se na vývoj a výrobu kosmetiky. 
@@ -16,11 +18,11 @@
     </div>
 
     <!-- Products Section -->
-    <div class="flex space-x-10 mt-16 px-6">
+    <div class="flex flex-col sm:flex-row sm:space-x-10 mt-16 px-4 sm:px-6">
       <!-- Formamnon Product -->
-      <div class="bg-white p-8 rounded-xl shadow-lg animate-slide-up w-96 text-center">
+      <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg animate-slide-up w-full sm:w-96 text-center">
         <h2 class="text-2xl font-bold uppercase text-gray-900">FORMAMNON</h2>
-        <img src="/src/assets/images/formamnon.jpg" alt="Formamnon produkt" class="w-full h-80 object-cover mt-4 rounded-lg shadow">
+        <img src="/src/assets/images/formamnon.jpg" alt="Formamnon produkt" class="w-full h-64 sm:h-80 object-cover mt-4 rounded-lg shadow">
         <p class="text-lg text-gray-700 mt-4 leading-relaxed">
           Gel proti dermatomykózám s unikátní kombinací bylinných extraktů a neuropeptidu Alaptid.
         </p>
@@ -30,9 +32,9 @@
       </div>
 
       <!-- Sanusdent Product -->
-      <div class="bg-white p-8 rounded-xl shadow-lg animate-slide-up w-96 text-center">
+      <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg animate-slide-up w-full sm:w-96 text-center mt-8 sm:mt-0">
         <h2 class="text-2xl font-bold uppercase text-gray-900">SANUSDENT</h2>
-        <img src="/src/assets/images/sanusdent.jpg" alt="Sanusdent produkt" class="w-full h-80 object-cover mt-4 rounded-lg shadow">
+        <img src="/src/assets/images/sanusdent.jpg" alt="Sanusdent produkt" class="w-full h-64 sm:h-80 object-cover mt-4 rounded-lg shadow">
         <p class="text-lg text-gray-700 mt-4 leading-relaxed">
           Nepěnivá zubní pasta s Alaptidem a přírodními složkami pro šetrnou péči o zuby a dásně.
         </p>
@@ -43,7 +45,7 @@
     </div>
 
     <!-- Product Uniqueness Section -->
-    <div class="mt-16 max-w-4xl text-center px-6 py-8 bg-white rounded-xl shadow-lg">
+    <div class="mt-16 max-w-4xl text-center px-4 sm:px-6 py-8 bg-white rounded-xl shadow-lg">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">Unikátnost našich produktů</h2>
       <p class="text-lg text-gray-700 leading-relaxed">
         Výjimečnost našich produktů spočívá v pečlivě vybraném složení bylin a neuropeptidu Alaptid, 
@@ -54,7 +56,7 @@
         V letošním roce plánujeme rozšíření našeho portfolia o další inovativní produkty, včetně denních a nočních krémů, 
         regeneračního tělového mléka (tyto produkty jsou již v EU notifikovány), dále máme ve vývoji gel na popáleniny, 
         po kousnutí hmyzem a krém na ekzém. Dále připravujeme na trh také doplňky stravy, které svou unikátní kombinací 
-        dosud nikde na trhu nejsou nabízeny (prevence onko, podpora kognitivních funkcí mozku, prevence alergií).
+        dosud nikde na trhu nejsou nabízeny (podpora kognitivních funkcí mozku, prevence alergií).
       </p>
     </div>
   </div>
@@ -71,6 +73,24 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 .animate-fade-in { animation: fadeIn 1.5s ease-in-out; }
 .animate-slide-up { animation: slideUp 1.5s ease-in-out; }
+.animate-slide-down { animation: slideDown 1.5s ease-in-out; }
+
+@media (max-width: 768px) {
+  .home {
+    padding-top: 80px;
+  }
+  .flex {
+    flex-direction: column;
+  }
+  .w-96 {
+    width: 100%;
+  }
+}
 </style>
