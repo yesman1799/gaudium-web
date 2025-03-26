@@ -15,13 +15,6 @@
       <p class="text-lg sm:text-xl text-gray-700">Mobil: +420 776 251 226</p>
     </div>
 
-    <!-- Otevírací doba -->
-    <div class="mt-12 max-w-4xl mx-auto px-4 sm:px-8 py-10 bg-white rounded-xl shadow-xl animate-slide-up">
-      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Otevírací doba</h2>
-      <p class="text-lg sm:text-xl text-gray-700">Pondělí - Pátek: 9:00 – 18:00</p>
-      <p class="text-lg sm:text-xl text-gray-700">Sobota - Neděle: Zavřeno</p>
-    </div>
-
     <!-- Map -->
     <div class="mt-12 max-w-4xl mx-auto px-4 sm:px-8 py-10 bg-white rounded-xl shadow-xl animate-slide-up">
       <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Kde nás najdete</h2>

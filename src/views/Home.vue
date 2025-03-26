@@ -1,96 +1,73 @@
+// Home.vue
 <template>
-  <div class="home flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center px-4 sm:px-6 md:px-12 pt-40 font-sans">
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 tracking-wide animate-slide-down">
-      Vítejte na stránkách Gaudium2022 s.r.o.
-    </h1>
-    <p class="text-lg sm:text-xl text-gray-700 max-w-3xl leading-relaxed animate-fade-in">
-      Jsme specialisté na vývoj a výrobu inovativní přírodní kosmetiky, která podporuje zdraví pokožky a celkovou pohodu.
-    </p>
-
-    <!-- About Section -->
-    <div class="mt-16 max-w-4xl text-center px-4 sm:px-6 py-8 bg-white rounded-xl shadow-lg">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">O nás</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        Naše společnost byla založena v roce 2022 a specializuje se na vývoj a výrobu kosmetiky. 
-        Jsme tým odborníků, kteří se zaměřují na inovativní a účinné kosmetické produkty, které přinášejí 
-        skutečnou hodnotu pro zdraví pokožky a celkovou pohodu.
-      </p>
-    </div>
+  <div class="pt-20"> <!-- Added padding to prevent navbar overlap -->
+    <!-- Hero Section -->
+    <header class="text-center py-24 bg-gradient-to-r from-[#452671] to-purple-600 shadow-lg text-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-5xl font-extrabold">Vítejte na stránkách společnosti Gaudium2022 s.r.o.</h2>
+        <p class="mt-6 text-xl">
+          Naše společnost byla založena v roce 2022 a specializuje se na vývoj a výrobu kosmetiky.
+          Jsme tým odborníků, kteří se zaměřují na inovativní a účinné kosmetické produkty,
+          které přinášejí skutečnou hodnotu pro zdraví pokožky a celkovou pohodu.
+        </p>
+      </div>
+    </header>
 
     <!-- Products Section -->
-    <div class="flex flex-col sm:flex-row sm:space-x-10 mt-16 px-4 sm:px-6">
-      <!-- Formamnon Product -->
-      <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg animate-slide-up w-full sm:w-96 text-center">
-        <h2 class="text-2xl font-bold uppercase text-gray-900">FORMAMNON</h2>
-        <img src="/src/assets/images/formamnon.jpg" alt="Formamnon produkt" class="w-full h-64 sm:h-80 object-cover mt-4 rounded-lg shadow">
-        <p class="text-lg text-gray-700 mt-4 leading-relaxed">
-          Gel proti dermatomykózám s unikátní kombinací bylinných extraktů a neuropeptidu Alaptid.
-        </p>
-        <router-link to="/formamnon" class="mt-4 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition text-lg font-semibold">
-          Více informací
-        </router-link>
+    <section id="products" class="py-20 px-6 md:px-12">
+      <h2 class="text-4xl font-bold text-center text-[#452671]">Naše hlavní produkty</h2>
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div class="bg-white p-10 shadow-xl text-center rounded-xl border border-gray-200 transform hover:scale-105 transition" v-for="product in products" :key="product.id">
+          <h3 class="text-3xl font-semibold text-gray-800">{{ product.name }}</h3>
+          <p class="mt-4 text-lg text-gray-600">{{ product.description }}</p>
+          <router-link :to="product.route">
+            <button class="mt-6 bg-[#452671] text-white py-3 px-6 rounded-lg hover:bg-[#3a1e5b] transition">Více informací</button>
+          </router-link>
+        </div>
       </div>
+    </section>
 
-      <!-- Sanusdent Product -->
-      <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg animate-slide-up w-full sm:w-96 text-center mt-8 sm:mt-0">
-        <h2 class="text-2xl font-bold uppercase text-gray-900">SANUSDENT</h2>
-        <img src="/src/assets/images/sanusdent.jpg" alt="Sanusdent produkt" class="w-full h-64 sm:h-80 object-cover mt-4 rounded-lg shadow">
-        <p class="text-lg text-gray-700 mt-4 leading-relaxed">
-          Nepěnivá zubní pasta s Alaptidem a přírodními složkami pro šetrnou péči o zuby a dásně.
-        </p>
-        <router-link to="/sanusdent" class="mt-4 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition text-lg font-semibold">
-          Více informací
-        </router-link>
-      </div>
-    </div>
-
-    <!-- Product Uniqueness Section -->
-    <div class="mt-16 max-w-4xl text-center px-4 sm:px-6 py-8 bg-white rounded-xl shadow-lg">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Unikátnost našich produktů</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        Výjimečnost našich produktů spočívá v pečlivě vybraném složení bylin a neuropeptidu Alaptid, 
-        který se podílí na jejich výjimečné účinnosti a bezpečnosti. Tento pečlivý výběr složek zajišťuje, 
+    <!-- Unique Features Section -->
+    <section class="bg-gray-100 py-20 px-6 md:px-12">
+      <h2 class="text-4xl font-bold text-center text-[#452671]">Unikátnost našich produktů</h2>
+      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
+        Výjimečnost našich produktů spočívá v pečlivě vybraném složení bylin a neuropeptidu Alaptid,
+        který se podílí na jejich výjimečné účinnosti a bezpečnosti. Tento pečlivý výběr složek zajišťuje,
         že produkty poskytují efektivní a zároveň šetrnou péči pro pokožku a ústní dutinu.
       </p>
-      <p class="text-lg text-gray-700 mt-4 leading-relaxed">
-        V letošním roce plánujeme rozšíření našeho portfolia o další inovativní produkty, včetně denních a nočních krémů, 
-        regeneračního tělového mléka (tyto produkty jsou již v EU notifikovány), dále máme ve vývoji gel na popáleniny, 
-        po kousnutí hmyzem a krém na ekzém. Dále připravujeme na trh také doplňky stravy, které svou unikátní kombinací 
-        dosud nikde na trhu nejsou nabízeny (podpora kognitivních funkcí mozku, prevence alergií).
+    </section>
+
+    <!-- Future Products Section -->
+    <section class="py-20 px-6 md:px-12">
+      <h2 class="text-4xl font-bold text-center text-[#452671]">Naše budoucí produkty</h2>
+      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
+        V letošním roce plánujeme rozšíření našeho portfolia o další inovativní produkty,
+        včetně denních a nočních krémů, regeneračního tělového mléka, gelu na popáleniny,
+        krému na ekzém a dalších doplňků stravy.
       </p>
-    </div>
+    </section>
   </div>
 </template>
 
+<script>
+export default {
+  name: "Home",
+  data() {
+    return {
+      products: [
+        { id: 1, name: "FORMAMNON", description: "Gel proti dermatomykózám.", route: "/formamnon" },
+        { id: 2, name: "SANUSDENT", description: "Nepěnivá zubní pasta.", route: "/sanusdent" }
+      ]
+    };
+  }
+};
+</script>
+
 <style scoped>
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+body {
+  font-family: 'Roboto', sans-serif;
 }
-
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.animate-fade-in { animation: fadeIn 1.5s ease-in-out; }
-.animate-slide-up { animation: slideUp 1.5s ease-in-out; }
-.animate-slide-down { animation: slideDown 1.5s ease-in-out; }
-
-@media (max-width: 768px) {
-  .home {
-    padding-top: 80px;
-  }
-  .flex {
-    flex-direction: column;
-  }
-  .w-96 {
-    width: 100%;
-  }
+h2 {
+  font-family: 'Roboto', sans-serif;
 }
 </style>

@@ -1,20 +1,38 @@
-/* Updated ProductFormamnon.vue for responsiveness */
 <template>
-  <div class="product-view min-h-screen bg-gray-50 text-center px-4 sm:px-6 md:px-12 pt-40 font-sans animate-fade-in">
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 tracking-wide animate-zoom-in">FORMAMNON</h1>
-    <p class="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed animate-fade-in">Genialita v jednoduchosti a účinnosti.</p>
+  <div class="pt-20 px-6 md:px-12">
+    <!-- Hero Section -->
+    <header class="text-center py-24 bg-gradient-to-r from-[#452671] to-purple-600 shadow-lg text-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h1 class="text-5xl font-extrabold">Formamnon – Genialita v jednoduchosti a účinnosti</h1>
+        <p class="mt-6 text-xl">
+          Formamnon je jedinečný produkt, který spojuje sílu přírody s moderní dermatologií. Obsahuje pouze 7 pečlivě vybraných složek, které zajišťují vysokou účinnost a bezpečnost.
+        </p>
+      </div>
+    </header>
 
-    <div class="mt-12 max-w-4xl mx-auto px-4 sm:px-8 py-10 bg-white rounded-xl shadow-xl relative">
-      <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
-        Formamnon je jedinečný produkt, který spojuje sílu přírody s moderní dermatologií. 
-        Jeho genialita spočívá v jednoduchosti – obsahuje pouze 7 pečlivě vybraných složek, 
-        které zajišťují vysokou účinnost a bezpečnost.
+    <!-- Product Details Section -->
+    <section class="py-20 max-w-6xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-[#452671]">Bezkonkurenční účinnost na trhu</h2>
+      <p class="mt-6 text-lg text-gray-700">
+        Xylopie a tea tree olej poskytují silnou antimikrobiální a antimykotickou účinnost, zatímco šalvěj přináší příznivé účinky na pleť a pomáhá snižovat nadměrné pocení.
       </p>
-      <p class="text-lg sm:text-xl text-gray-700 mt-4 leading-relaxed">
-        Tento přípravek není určen pouze pro mykotické infekce prstů na nohou, ale je účinný 
-        i na širokou škálu dalších kožních problémů po celém těle.
+    </section>
+
+    <!-- Natural Ingredients Section -->
+    <section class="bg-gray-100 py-20 px-6 md:px-12">
+      <h2 class="text-4xl font-bold text-center text-[#452671]">Přírodní a ověřené</h2>
+      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
+        Formamnon je vyroben většinou z přírodních látek, které zajišťují jeho šetrnost a vysokou účinnost. Nezapomínáme ani na neuropeptid Alaptid, jehož regenerační účinky jsou dobře známé.
       </p>
-    </div>
+    </section>
+
+    <!-- Scientific Background -->
+    <section class="py-20 px-6 md:px-12">
+      <h2 class="text-4xl font-bold text-center text-[#452671]">Pod vedením odborníků</h2>
+      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
+        Formamnon je výsledkem dlouholetého výzkumu pod vedením dermatologa s více než 40 lety praxe v oboru.
+      </p>
+    </section>
 
     <!-- Slideshow Component -->
     <SlideViewer product="formamnon" class="mt-12 relative" />
@@ -25,6 +43,7 @@
 import SlideViewer from "@/components/SlideViewer.vue";
 
 export default {
+  name: "ProductFormamnon",
   components: {
     SlideViewer,
   },
@@ -32,22 +51,10 @@ export default {
 </script>
 
 <style scoped>
-@keyframes zoomIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+body {
+  font-family: 'Roboto', sans-serif;
 }
-.animate-zoom-in { animation: zoomIn 1.5s ease-in-out; }
-
-@media (max-width: 768px) {
-  .product-view {
-    padding-top: 80px;
-  }
-  .max-w-4xl {
-    max-width: 100%;
-  }
-  .px-8 {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
 }
 </style>
