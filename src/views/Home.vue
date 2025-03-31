@@ -1,73 +1,66 @@
-// Home.vue
 <template>
-  <div class="pt-20"> <!-- Added padding to prevent navbar overlap -->
-    <!-- Hero Section -->
-    <header class="text-center py-24 bg-gradient-to-r from-[#452671] to-purple-600 shadow-lg text-white">
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-5xl font-extrabold">Vítejte na stránkách společnosti Gaudium2022 s.r.o.</h2>
-        <p class="mt-6 text-xl">
+  <section class="bg-white text-gray-800 pt-28 pb-24 font-sans">
+    <!-- Hero -->
+    <div class="w-full bg-white">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-5xl sm:text-6xl font-bold text-blue-900 leading-tight mb-6">
+          Vítejte na stránkách<br class="hidden sm:inline" />
+          společnosti Gaudium2022 s.r.o.
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Naše společnost byla založena v roce 2022 a specializuje se na vývoj a výrobu kosmetiky.
-          Jsme tým odborníků, kteří se zaměřují na inovativní a účinné kosmetické produkty,
-          které přinášejí skutečnou hodnotu pro zdraví pokožky a celkovou pohodu.
+          Jsme tým odborníků zaměřených na inovativní a účinné produkty, které přinášejí
+          skutečnou hodnotu pro zdraví pokožky a celkovou pohodu.
         </p>
       </div>
-    </header>
+    </div>
 
-    <!-- Products Section -->
-    <section id="products" class="py-20 px-6 md:px-12">
-      <h2 class="text-4xl font-bold text-center text-[#452671]">Naše hlavní produkty</h2>
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-        <div class="bg-white p-10 shadow-xl text-center rounded-xl border border-gray-200 transform hover:scale-105 transition" v-for="product in products" :key="product.id">
-          <h3 class="text-3xl font-semibold text-gray-800">{{ product.name }}</h3>
-          <p class="mt-4 text-lg text-gray-600">{{ product.description }}</p>
-          <router-link :to="product.route">
-            <button class="mt-6 bg-[#452671] text-white py-3 px-6 rounded-lg hover:bg-[#3a1e5b] transition">Více informací</button>
-          </router-link>
+    <!-- Divider -->
+    <div class="mt-20 mb-16 h-px w-full bg-gray-200"></div>
+
+    <!-- Unique Section -->
+    <div class="w-full bg-gray-50 py-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="bg-white shadow-xl rounded-2xl p-10 md:p-14">
+          <h2 class="text-3xl font-bold text-blue-800 mb-6">
+            Unikátnost našich produktů
+          </h2>
+          <div class="space-y-5 text-gray-700 text-lg leading-relaxed">
+            <p>
+              Výjimečnost našich produktů spočívá v pečlivě vybraném složení bylin a neuropeptidu Alaptid,
+              který se podílí na jejich výjimečné účinnosti a bezpečnosti. Tento pečlivý výběr složek zajišťuje,
+              že produkty poskytují efektivní a zároveň šetrnou péči pro pokožku a ústní dutinu.
+            </p>
+            <p>
+              V letošním roce plánujeme rozšíření našeho portfolia o další inovativní produkty,
+              včetně denních a nočních krémů, regeneračního tělového mléka, gelu proti popáleninám,
+              po kousnutí hmyzem a krému proti ekzému.
+            </p>
+            <p>
+              Dále připravujeme na trh také doplňky stravy, které vyvíjíme a které svou unikátní kombinací
+              dosud nikde na trhu nejsou nabízeny (prevence civilizačních chorob, podpora kognitivních funkcí mozku,
+              prevence alergií).
+            </p>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Unique Features Section -->
-    <section class="bg-gray-100 py-20 px-6 md:px-12">
-      <h2 class="text-4xl font-bold text-center text-[#452671]">Unikátnost našich produktů</h2>
-      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
-        Výjimečnost našich produktů spočívá v pečlivě vybraném složení bylin a neuropeptidu Alaptid,
-        který se podílí na jejich výjimečné účinnosti a bezpečnosti. Tento pečlivý výběr složek zajišťuje,
-        že produkty poskytují efektivní a zároveň šetrnou péči pro pokožku a ústní dutinu.
-      </p>
-    </section>
-
-    <!-- Future Products Section -->
-    <section class="py-20 px-6 md:px-12">
-      <h2 class="text-4xl font-bold text-center text-[#452671]">Naše budoucí produkty</h2>
-      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
-        V letošním roce plánujeme rozšíření našeho portfolia o další inovativní produkty,
-        včetně denních a nočních krémů, regeneračního tělového mléka, gelu na popáleniny,
-        krému na ekzém a dalších doplňků stravy.
-      </p>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: "Home",
-  data() {
-    return {
-      products: [
-        { id: 1, name: "FORMAMNON", description: "Gel proti dermatomykózám.", route: "/formamnon" },
-        { id: 2, name: "SANUSDENT", description: "Nepěnivá zubní pasta.", route: "/sanusdent" }
-      ]
-    };
-  }
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
-h2 {
-  font-family: 'Roboto', sans-serif;
+h1, h2 {
+  font-family: 'Inter', sans-serif;
 }
 </style>
