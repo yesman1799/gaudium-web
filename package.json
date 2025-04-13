@@ -11,6 +11,7 @@
   "dependencies": {
     "@pdftron/webviewer": "^11.3.0",
     "leaflet": "^1.9.4",
+    "lucide-vue-next": "^0.487.0",
     "particles.js": "^2.0.0",
     "pdfjs-dist": "^3.4.120",
     "vue": "^3.5.13",

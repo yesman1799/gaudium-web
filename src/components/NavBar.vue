@@ -1,84 +1,74 @@
-// NavBar.vue
 <template>
-  <nav class="bg-white shadow-md fixed w-full top-0 left-0 z-50 py-4">
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <router-link to="/" class="flex items-center">
-        <img src="/src/assets/images/logo-gaudium.jpg" alt="Gaudium Logo" class="h-14" />
+  <header class="bg-white shadow-md font-serif tracking-wide">
+    <div class="max-w-screen-xl mx-auto px-6 py-2 flex justify-between items-center">
+      <router-link to="/">
+        <img src="@/assets/images/logo-gaudium.jpg" alt="Gaudium Logo" class="h-24 md:h-24 w-auto" />
       </router-link>
-      
-      <!-- Navigation Links for Desktop -->
-      <ul class="hidden md:flex space-x-6 text-lg font-semibold text-gray-700">
-        <li><router-link to="/" class="hover:text-[#452671] transition">Domů</router-link></li>
-        <li class="relative group">
-          <button class="hover:text-[#452671] transition">Produkty</button>
-          <ul class="absolute left-0 opacity-0 group-hover:opacity-100 group-hover:visible bg-white shadow-md mt-2 w-48 rounded-md transition-opacity duration-200 ease-in-out" @mouseover="keepDropdownOpen" @mouseleave="closeDropdown">
-            <li><router-link to="/formamnon" class="block px-4 py-2 hover:bg-[#452671] hover:text-white">FORMAMNON</router-link></li>
-            <li><router-link to="/sanusdent" class="block px-4 py-2 hover:bg-[#452671] hover:text-white">SANUSDENT</router-link></li>
-          </ul>
-        </li>
-        <li><router-link to="/contact" class="hover:text-[#452671] transition">Kontakt</router-link></li>
-      </ul>
-      
-      <!-- Hamburger Menu Button for Mobile -->
-      <button @click="toggleMenu" class="md:hidden text-gray-700 text-3xl focus:outline-none">
-        ☰
-      </button>
+      <div class="md:hidden">
+        <button @click="toggleMenu" class="text-green-800 focus:outline-none">
+          <svg v-if="!menuOpen" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg v-else class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-lg tracking-wide">
+        <router-link to="/" class="nav-link">Domů</router-link>
+        <router-link to="/formamnon" class="nav-link">Formamnon</router-link>
+        <router-link to="/sanusdent" class="nav-link">Sanusdent</router-link>
+        <router-link to="/contact" class="nav-link">Kontakt</router-link>
+      </nav>
     </div>
-    
-    <!-- Mobile Navigation Menu -->
-    <div v-if="mobileMenuOpen" class="md:hidden bg-white w-full shadow-md py-4 px-6">
-      <ul class="flex flex-col space-y-4 text-lg font-semibold text-gray-700">
-        <li><router-link to="/" class="hover:text-[#452671] transition" @click="toggleMenu">Domů</router-link></li>
-        <li><router-link to="/formamnon" class="hover:text-[#452671] transition" @click="toggleMenu">FORMAMNON</router-link></li>
-        <li><router-link to="/sanusdent" class="hover:text-[#452671] transition" @click="toggleMenu">SANUSDENT</router-link></li>
-        <li><router-link to="/contact" class="hover:text-[#452671] transition" @click="toggleMenu">Kontakt</router-link></li>
-      </ul>
-    </div>
-  </nav>
+
+    <!-- Mobile menu -->
+    <transition name="fade">
+      <nav v-if="menuOpen" class="md:hidden px-6 bg-white border-t border-gray-200 text-lg font-serif tracking-wide">
+        <ul class="flex flex-col items-end text-right space-y-4 mt-4 pb-4">
+          <li><router-link to="/" @click="closeMenu" class="nav-link">Domů</router-link></li>
+          <li><router-link to="/formamnon" @click="closeMenu" class="nav-link">Formamnon</router-link></li>
+          <li><router-link to="/sanusdent" @click="closeMenu" class="nav-link">Sanusdent</router-link></li>
+          <li><router-link to="/contact" @click="closeMenu" class="nav-link">Kontakt</router-link></li>
+        </ul>
+      </nav>
+    </transition>
+  </header>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      mobileMenuOpen: false,
-      dropdownOpen: false,
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.mobileMenuOpen = !this.mobileMenuOpen;
-    },
-    keepDropdownOpen() {
-      this.dropdownOpen = true;
-    },
-    closeDropdown() {
-      this.dropdownOpen = false;
-    },
-  },
-};
+<script setup>
+import { ref } from 'vue'
+const menuOpen = ref(false)
+const toggleMenu = () => menuOpen.value = !menuOpen.value
+const closeMenu = () => menuOpen.value = false
 </script>
 
 <style scoped>
-nav {
-  padding: 1rem 2rem;
-  font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+
+.text-primary {
+  @apply text-green-800;
 }
-.relative:hover ul {
-  display: block;
+
+.nav-link {
+  @apply font-semibold transition-all duration-300;
+  color: #1f3f2b;
 }
-@media (max-width: 768px) {
-  .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .md\:hidden {
-    order: 2;
-  }
+
+.nav-link:hover {
+  color: #4d8f5c;
+  filter: brightness(1.2);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -1,8 +1,21 @@
 <template>
-  <footer class="bg-gray-800 text-white p-6 text-center mt-8 border-t border-gray-700">
-    <p class="text-lg font-medium">© 2025 Gaudium2022 | Moskevská 14, Most 1 434 01, Česká republika</p>
-    <p class="mt-2">Email: <a href="mailto:gaudium2022@seznam.cz" class="text-green-400 hover:underline">gaudium2022@seznam.cz</a></p>
-    <p>Telefon: <a href="tel:+420777857773" class="text-green-400 hover:underline">+420 777 857 773</a></p>
-    <p>Mobil: <a href="tel:+420776251226" class="text-green-400 hover:underline">+420 776 251 226</a></p>
-  </footer>
+  <nav class="flex justify-between items-center px-6 py-4 shadow-md bg-white text-lg font-[Inter]">
+    <router-link to="/">
+      <img src="@/assets/images/logo-gaudium.jpg" alt="Gaudium Logo" class="h-14 w-auto" />
+    </router-link>
+    <ul class="flex space-x-6">
+      <li><router-link to="/" class="hover:text-primary font-medium">Domů</router-link></li>
+      <li><router-link to="/formamnon" class="hover:text-primary font-medium">Formamnon</router-link></li>
+      <li><router-link to="/sanusdent" class="hover:text-primary font-medium">Sanusdent</router-link></li>
+      <li><router-link to="/contact" class="hover:text-primary font-medium">Kontakt</router-link></li>
+    </ul>
+  </nav>
 </template>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.text-primary {
+  @apply text-green-800;
+}
+</style>

@@ -1,63 +1,51 @@
 <template>
-  <div class="pt-20 px-6 md:px-12">
-    <!-- Hero Section -->
-    <header class="text-center py-24 bg-gradient-to-r from-[#452671] to-purple-600 shadow-lg text-white">
-      <div class="max-w-5xl mx-auto px-6">
-        <h1 class="text-5xl font-extrabold">Formamnon – Genialita v jednoduchosti a účinnosti</h1>
-        <p class="mt-6 text-xl">
-          Formamnon je jedinečný produkt, který spojuje sílu přírody s moderní dermatologií. Obsahuje pouze 7 pečlivě vybraných složek, které zajišťují vysokou účinnost a bezpečnost.
-        </p>
+  <section class="bg-white text-[#232f61]">
+    <div class="max-w-screen-xl mx-auto px-4 py-12 font-sans">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 font-serif">Formamnon – Genialita v jednoduchosti a účinnosti</h2>
+
+      <p class="text-lg leading-relaxed mb-6">
+        Formamnon je jedinečný produkt, který spojuje sílu přírody s moderní dermatologií. Jeho genialita spočívá v jednoduchosti – obsahuje pouze 7 pečlivě vybraných složek, které zajišťují vysokou účinnost a bezpečnost. Tento přípravek není určen pouze pro mykotické infekce prstů na nohou, ale je účinný i na širokou škálu dalších kožních problémů po celém těle.
+      </p>
+
+      <p class="text-lg leading-relaxed mb-6">
+        Je určen při léčbě kožních plísňových infekcí a jeho účinnost je podporována unikátním složením bylin a neuropeptidu <strong>Alaptid</strong>.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4 font-serif">Bezkonkurenční účinnost na trhu</h3>
+      <p class="text-lg leading-relaxed mb-6">
+        <strong>Xylopie</strong> a <strong>tea tree olej</strong> poskytují silnou antimikrobiální a antimykotickou účinnost, zatímco <strong>šalvěj</strong> přináší příznivé účinky na pleť a pomáhá snižovat nadměrné pocení. Účinnost Formamnonu je dále posílena konzervačním přípravkem s obsahem stříbra, určeným pro kosmetické produkty tohoto typu. Nezapomínáme ani na <strong>neuropeptid Alaptid</strong>, jehož regenerační účinky a fenomenální mechanismus působení jsou dobře známé.
+      </p>
+
+      <h3 class="text-2xl font-semibold mt-8 mb-4 font-serif">Přírodní a ověřené</h3>
+      <p class="text-lg leading-relaxed mb-6">
+        Formamnon je vyroben většinou z přírodních látek, které zajišťují jeho šetrnost a vysokou účinnost. Naproti tomu <strong>Alaptid</strong> a <strong>JMAC</strong> jsou laboratorně syntetizované (stříbro je v položce JM Active care přidáváno na titanové bělobě). Tato kombinace výrazně zvyšuje bezpečnost a účinnost produktu při léčbě dermatomykóz.
+      </p>
+
+      <p class="text-lg leading-relaxed mb-10">
+        Tento ověřený produkt prokázal statisticky významný účinek u mnoha pacientů v boji proti mykózám a kožním problémům. Formamnon je dokonalou kombinací tradičního umění a moderní dermatologie, vytvořený pod vedením dermatologa s více než 40 lety praxe v oboru.
+      </p>
+
+      <FormamnonCarousel />
+
+      <div class="mt-10 text-center">
+        <a
+          href="/assets/presentations/formamnon"
+          target="_blank"
+          class="inline-block bg-[#232f61] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#2f3c7e] transition"
+        >
+          Otevřít prezentaci
+        </a>
       </div>
-    </header>
-
-    <!-- Product Details Section -->
-    <section class="py-20 max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-[#452671]">Bezkonkurenční účinnost na trhu</h2>
-      <p class="mt-6 text-lg text-gray-700">
-        Xylopie a tea tree olej poskytují silnou antimikrobiální a antimykotickou účinnost, zatímco šalvěj přináší příznivé účinky na pleť a pomáhá snižovat nadměrné pocení.
-      </p>
-    </section>
-
-    <!-- Natural Ingredients Section -->
-    <section class="bg-gray-100 py-20 px-6 md:px-12">
-      <h2 class="text-4xl font-bold text-center text-[#452671]">Přírodní a ověřené</h2>
-      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
-        Formamnon je vyroben většinou z přírodních látek, které zajišťují jeho šetrnost a vysokou účinnost. Nezapomínáme ani na neuropeptid Alaptid, jehož regenerační účinky jsou dobře známé.
-      </p>
-    </section>
-
-    <!-- Scientific Background -->
-    <section class="py-20 px-6 md:px-12">
-      <h2 class="text-4xl font-bold text-center text-[#452671]">Pod vedením odborníků</h2>
-      <p class="mt-6 text-xl max-w-4xl mx-auto text-gray-700 text-center">
-        Formamnon je výsledkem dlouholetého výzkumu pod vedením dermatologa s více než 40 lety praxe v oboru.
-      </p>
-    </section>
-
-    <!-- Slideshow Component -->
-    <SlideViewer product="formamnon" class="mt-12 relative" />
-  </div>
+    </div>
+  </section>
 </template>
 
-<script>
-import SlideViewer from "@/components/SlideViewer.vue";
-
-export default {
-  name: "ProductFormamnon",
-  components: {
-    SlideViewer,
-  },
-};
+<script setup>
+import FormamnonCarousel from '@/components/FormamnonCarousel.vue'
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
-body {
-  font-family: 'Inter', sans-serif;
-}
-h1, h2 {
-  font-family: 'Inter', sans-serif;
+.font-serif {
+  font-family: 'Playfair Display', serif;
 }
 </style>
-
