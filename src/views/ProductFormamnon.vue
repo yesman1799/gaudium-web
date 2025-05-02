@@ -26,16 +26,6 @@
       </p>
 
       <FormamnonCarousel />
-
-      <div class="mt-10 text-center">
-        <a
-          href="/assets/presentations/formamnon"
-          target="_blank"
-          class="inline-block bg-[#232f61] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#2f3c7e] transition"
-        >
-          Otevřít prezentaci
-        </a>
-      </div>
     </div>
   </section>
 </template>
