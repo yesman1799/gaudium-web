@@ -1,7 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <!-- TODO: Mutace a jazyky EN a DEUTSH -->
-     <!-- TODO: Zjistit jestli Public folder ma byt v repo -->
     <NavBar />
     <main class="flex-1">
       <router-view />
