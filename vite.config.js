@@ -8,5 +8,8 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src') // Allows @ to refer to src/
     }
+  },
+  build: {
+    target: 'esnext' // This enables top-level await support
   }
 });
