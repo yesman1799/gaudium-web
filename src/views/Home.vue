@@ -1,80 +1,237 @@
+<!-- src/views/Home.vue -->
 <template>
-  <main class="bg-white text-[#232f61] overflow-x-hidden">
-    <!-- Hero sekce s pozadím + gradienty do ztracena -->
-    <section
-      class="relative w-full h-[90vh] bg-no-repeat bg-center bg-cover flex items-center justify-start"
-      :style="`background-image: url(${bgFiller}); background-size: 100% 100%;`"
-    >
-      <!-- Gradienty do stran a spodku -->
-      <div class="absolute inset-y-0 left-0 w-[5%] bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute inset-y-0 right-0 w-[5%] bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute bottom-0 left-0 w-full h-[10%] bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"></div>
-
-      <!-- Obsah hero sekce -->
-      <div class="relative z-20 text-left text-[#232f61] max-w-3xl px-6 lg:ml-[10%] flex flex-col justify-center h-full translate-y-10">
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 font-serif text-center">
-          Přírodní inovace pro zdravou pokožku i úsměv
+  <!-- HERO -->
+  <section class="min-h-screen gradient-bg flex items-center pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div v-on-view class="slide-in">
+        <div class="inline-block bg-mint-light/20 text-forest-green px-4 py-2 rounded-full text-sm font-medium mb-6">
+          🌿 Revoluční Alaptid komplex
+        </div>
+        <h1 class="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+          <span class="text-gradient">Příroda</span><br />
+          <span class="text-forest-green">&amp; Věda</span><br />
+          <span class="text-mint-light">v harmonii</span>
         </h1>
-        <p class="text-lg mb-8 text-center">
-          Kosmetika nové generace, která spojuje sílu vědy a přírody. Vyzkoušejte přípravky s Alaptidem pro
-          každodenní péči o pleť, ústní dutinu a celkové zdraví.
+        <p class="text-xl text-forest-green/80 mb-10 leading-relaxed max-w-lg">
+          Objevte budoucnost přírodní kosmetiky. Naše produkty kombinují tisíciletou moudrost přírody s nejmodernějšími vědeckými poznatky.
         </p>
-        <div class="flex justify-center">
-          <RouterLink to="/formamnon">
-            <button class="bg-[#232f61] text-white px-6 py-3 font-semibold rounded hover:bg-[#1b254f] transition transform hover:scale-105 duration-300">
-              Zjistit více
-            </button>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <RouterLink
+            to="/produkty"
+            class="bg-gradient-to-r from-forest-green to-mint-light text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all"
+          >
+            Prozkoumat produkty
           </RouterLink>
+          <a
+            href="#science"
+            class="border-2 border-forest-green text-forest-green px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-forest-green hover:text-white transition-all"
+          >
+            Vědecké studie
+          </a>
         </div>
       </div>
 
-      <!-- Šipka dolů -->
-      <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
-        <a href="#about" class="block w-10 h-10 border-b-4 border-r-4 border-[#232f61] rotate-45 transform hover:scale-110 transition duration-300"></a>
-      </div>
-    </section>
+      <div v-on-view class="slide-in-right delay-2">
+        <div class="relative floating">
+          <!-- dekorativní SVG -->
+          <svg class="w-full h-[600px]" viewBox="0 0 500 500" fill="none" aria-hidden="true">
+            <ellipse cx="250" cy="250" rx="200" ry="280" fill="url(#leafGradient)" opacity="0.1"/>
+            <path d="M250 50 C300 100, 350 150, 380 220 C350 290, 300 350, 250 400 C200 350, 150 290, 120 220 C150 150, 200 100, 250 50 Z" fill="url(#leafGradient)"/>
+            <path d="M250 80 C280 110, 310 140, 330 180 C310 220, 280 250, 250 280 C220 250, 190 220, 170 180 C190 140, 220 110, 250 80 Z" fill="#2D5A4F"/>
+            <line x1="250" y1="80"  x2="250" y2="280" stroke="#1B3B36" stroke-width="3"/>
+            <path d="M250 120 Q280 140, 300 170" stroke="#1B3B36" stroke-width="2" fill="none"/>
+            <path d="M250 120 Q220 140, 200 170" stroke="#1B3B36" stroke-width="2" fill="none"/>
+            <path d="M250 160 Q275 175, 290 200" stroke="#1B3B36" stroke-width="2" fill="none"/>
+            <path d="M250 160 Q225 175, 210 200" stroke="#1B3B36" stroke-width="2" fill="none"/>
 
-    <!-- Info sekce jako "O nás" -->
-    <section id="about" class="relative bg-[#f5f7fb] border-[3px] border-[#232f61] rounded-xl py-28 px-6 md:px-16 mt-20 mx-4 shadow-md overflow-hidden">
-      <!-- Dekorativní gradienty jako efekt do ztracena -->
-      <div class="absolute inset-y-0 left-0 w-[5%] bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-      <div class="absolute inset-y-0 right-0 w-[5%] bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+            <g opacity="0.7">
+              <circle cx="400" cy="150" r="30" fill="none" stroke="#B5651D" stroke-width="3"/>
+              <circle cx="400" cy="150" r="15" fill="#B5651D" opacity="0.3"/>
+              <circle cx="420" cy="130" r="8"  fill="#B5651D"/>
+              <circle cx="380" cy="170" r="8"  fill="#B5651D"/>
+              <line x1="400" y1="150" x2="420" y2="130" stroke="#B5651D" stroke-width="2"/>
+              <line x1="400" y1="150" x2="380" y2="170" stroke="#B5651D" stroke-width="2"/>
+            </g>
 
-      <div class="max-w-4xl mx-auto text-left relative z-10">
-        <h2 class="text-4xl font-serif font-bold mb-10 text-[#232f61] border-b border-[#232f61] pb-4 text-center">O nás</h2>
-        <div class="space-y-6 text-[18px] leading-relaxed text-[#232f61] font-light text-justify">
-          <p>
-            Naše společnost byla založena v roce 2022 a specializuje se na vývoj a výrobu kosmetiky.
-            Jsme tým odborníků, kteří se zaměřují na inovativní a účinné kosmetické produkty,
-            které přinášejí skutečnou hodnotu pro zdraví pokožky a celkovou pohodu.
-          </p>
-          <p>
-            Výjimečnost našich produktů spočívá v pečlivě vybraném složení bylin a neuropeptidu Alaptid,
-            který se podílí na jejich výjimečné účinnosti a bezpečnosti.
-            Tento pečlivý výběr složek zajišťuje, že produkty poskytují efektivní a zároveň šetrnou péči
-            pro pokožku a ústní dutinu.
-          </p>
-          <p>
-            V letošním roce plánujeme rozšíření našeho portfolia o další inovativní produkty,
-            včetně denních a nočních krémů, regeneračního tělového mléka (tyto produkty jsou již v EU notifikovány),
-            dále máme ve vývoji gel na popáleniny, po kousnutí hmyzem a krém na ekzém.
-            Dále připravujeme na trh také doplňky stravy, které svou unikátní kombinací dosud nikde na trhu nejsou nabízeny
-            (prevence onko, podpora kognitivních funkcí mozku, prevence alergií).
-          </p>
+            <defs>
+              <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"  stop-color="#7FB069"/>
+                <stop offset="100%" stop-color="#2D5A4F"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div v-on-view class="text-center mb-20 slide-in">
+        <div class="inline-block bg-copper-accent/10 text-copper-accent px-6 py-3 rounded-full text-sm font-semibold mb-8">NAŠE MISE</div>
+        <h2 class="text-5xl font-bold text-gradient mb-8">Vědecká excelence</h2>
+        <p class="text-xl text-forest-green/70 max-w-4xl mx-auto leading-relaxed">
+          Od roku 2022 revolucionizujeme svět přírodní kosmetiky. Náš tým vyvinul průlomový Alaptid komplex — novou generaci účinných přírodních ingrediencí.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div v-on-view class="glass-effect rounded-3xl p-10 hover-lift slide-in delay-1 text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-mint-light to-forest-green rounded-2xl flex items-center justify-center mb-8 mx-auto">
+            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-forest-dark mb-4">Inovace</h3>
+          <p class="text-forest-green/70">Bioaktivní látky a jejich synergie.</p>
+        </div>
+
+        <div v-on-view class="glass-effect rounded-3xl p-10 hover-lift slide-in delay-2 text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-copper-accent to-forest-green rounded-2xl flex items-center justify-center mb-8 mx-auto">
+            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M2.166 5A11.9 11.9 0 0 1 12 2c3.355 0 6.394 1.374 8.5 3.584.11.652.166 1.321.166 2 0 5.225-3.34 9.67-8 11.317C7.34 16.67 4 12.225 4 7c0-.679.057-1.348.166-2Zm9.54 3.707a1 1 0 1 1 1.415 1.415l-3.293 3.292L8.54 11.415a1 1 0 1 1 1.414-1.415l.707.708 1.046-1.001Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-forest-dark mb-4">Bezpečnost</h3>
+          <p class="text-forest-green/70">Testováno dle mezinárodních standardů kvality.</p>
+        </div>
+
+        <div v-on-view class="glass-effect rounded-3xl p-10 hover-lift slide-in delay-3 text-center">
+          <div class="w-20 h-20 bg-gradient-to-br from-sage-muted to-mint-light rounded-2xl flex items-center justify-center mb-8 mx-auto">
+            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-forest-dark mb-4">Udržitelnost</h3>
+          <p class="text-forest-green/70">Ekologické zdroje a minimální dopad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="py-24 bg-warm-beige">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Headline -->
+      <div v-on-view class="text-center mb-20 slide-in">
+        <div class="inline-block bg-mint-light/20 text-forest-green px-6 py-3 rounded-full text-sm font-semibold mb-8">
+          NAŠE PRODUKTY
+        </div>
+        <h2 class="text-5xl font-bold text-gradient mb-8">Alaptid kolekce</h2>
+        <p class="text-xl text-forest-green/70 max-w-3xl mx-auto">
+          Každý produkt staví na našem <strong>Alaptid komplexu</strong> a chytré kombinaci přírodních extraktů.
+          Jednoduché složení, vysoká snášenlivost a výsledky ověřené praxí — to je péče, která dává smysl.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+        <ProductCard
+          v-for="(p,i) in products"
+          :key="p.slug"
+          :product="p"
+          :delay="i % 2 ? 'delay-2' : 'delay-1'"
+        />
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <RouterLink
+          to="/produkty"
+          class="inline-block bg-gradient-to-r from-forest-green to-mint-light text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-xl transition-all"
+        >
+          Zobrazit všechny produkty
+        </RouterLink>
+      </div>
+    </div>
+  </section>
+
+  <!-- EFEKTY / BENEFITY -->
+  <section class="pt-6 pb-24 bg-warm-beige">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mt-6 grid sm:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div v-on-view class="glass-effect rounded-2xl px-5 py-5 text-center slide-in delay-1">
+          <p class="font-semibold text-forest-dark">Šetrné složení</p>
+          <p class="text-sm text-forest-green/70">Bez zbytečných přísad, zaměřeno na účinnost</p>
+        </div>
+        <div v-on-view class="glass-effect rounded-2xl px-5 py-5 text-center slide-in delay-2">
+          <p class="font-semibold text-forest-dark">Alaptid inside</p>
+          <p class="text-sm text-forest-green/70">Neuropeptid podporující obnovu a komfort</p>
+        </div>
+        <div v-on-view class="glass-effect rounded-2xl px-5 py-5 text-center slide-in delay-3">
+          <p class="font-semibold text-forest-dark">Věda & příroda</p>
+          <p class="text-sm text-forest-green/70">Ověřené suroviny, moderní přístup</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE -->
+  <section id="science" class="py-24 bg-forest-dark text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div v-on-view class="text-center mb-20 slide-in">
+        <div class="inline-block bg-mint-light/20 text-mint-light px-6 py-3 rounded-full text-sm font-semibold mb-8">VĚDECKÉ POZADÍ</div>
+        <h2 class="text-5xl font-bold mb-8"><span class="text-white">Alaptid</span> <span class="text-mint-light">komplex</span></h2>
+        <p class="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+          Revoluční bioaktivní komplex vyvinutý našimi vědci kombinuje přírodní extrakty s pokročilou enkapsulací pro optimální absorpci a účinnost.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div v-on-view class="slide-in space-y-8">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-mint-light/20 rounded-2xl flex items-center justify-center shrink-0"><span class="text-mint-light font-bold text-xl">01</span></div>
+            <div>
+              <h3 class="text-2xl font-bold mb-3">Bioaktivní extrakty</h3>
+              <p class="text-white/70 leading-relaxed">Koncentrované výtažky z vybraných léčivých rostlin s prokázanými terapeutickými vlastnostmi.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-copper-accent/20 rounded-2xl flex items-center justify-center shrink-0"><span class="text-copper-accent font-bold text-xl">02</span></div>
+            <div>
+              <h3 class="text-2xl font-bold mb-3">Nanotechnologie</h3>
+              <p class="text-white/70 leading-relaxed">Pokročilá enkapsulace zajišťuje optimální penetraci aktivních látek do pokožky.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-sage-muted/20 rounded-2xl flex items-center justify-center shrink-0"><span class="text-sage-muted font-bold text-xl">03</span></div>
+            <div>
+              <h3 class="text-2xl font-bold mb-3">Synergické účinky</h3>
+              <p class="text-white/70 leading-relaxed">Pečlivě vyvážená kombinace ingrediencí pro maximalizaci terapeutického potenciálu.</p>
+            </div>
+          </div>
+        </div>
+
+        <div v-on-view class="slide-in-right delay-2">
+          <svg class="w-full h-96" viewBox="0 0 400 300" fill="none" aria-hidden="true">
+            <path d="M50 50 Q100 75, 150 50 T250 50 T350 50" stroke="#7FB069" stroke-width="4" fill="none" />
+            <path d="M50 100 Q100 125, 150 100 T250 100 T350 100" stroke="#B5651D" stroke-width="4" fill="none" />
+            <path d="M50 150 Q100 175, 150 150 T250 150 T350 150" stroke="#7FB069" stroke-width="4" fill="none" />
+            <path d="M50 200 Q100 225, 150 200 T250 200 T350 200" stroke="#B5651D" stroke-width="4" fill="none" />
+            <line x1="75" y1="62" x2="75" y2="88" stroke="#A8B5A0" stroke-width="2" />
+            <line x1="125" y1="62" x2="125" y2="88" stroke="#A8B5A0" stroke-width="2" />
+            <line x1="175" y1="62" x2="175" y2="88" stroke="#A8B5A0" stroke-width="2" />
+            <line x1="225" y1="62" x2="225" y2="88" stroke="#A8B5A0" stroke-width="2" />
+            <line x1="275" y1="62" x2="275" y2="88" stroke="#A8B5A0" stroke-width="2" />
+            <circle cx="75" cy="62" r="6" fill="#7FB069" />
+            <circle cx="125" cy="62" r="6" fill="#7FB069" />
+            <circle cx="175" cy="62" r="6" fill="#7FB069" />
+            <circle cx="225" cy="62" r="6" fill="#7FB069" />
+            <circle cx="275" cy="62" r="6" fill="#7FB069" />
+            <circle cx="75" cy="88" r="6" fill="#B5651D" />
+            <circle cx="125" cy="88" r="6" fill="#B5651D" />
+            <circle cx="175" cy="88" r="6" fill="#B5651D" />
+            <circle cx="225" cy="88" r="6" fill="#B5651D" />
+            <circle cx="275" cy="88" r="6" fill="#B5651D" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router';
-import bgFiller from '@/assets/images/bg-filler.jpg';
+import ProductCard from '@/components/ProductCard.vue'
+import { products } from '@/data/products'
 </script>
 
-<style scoped>
-html, body {
-  scroll-behavior: smooth;
+<script>
+export default {
+  directives: { onView: (await import('@/directives/vOnView.js')).default }
 }
-</style>
-
+</script>
