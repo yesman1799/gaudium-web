@@ -230,8 +230,4 @@ import ProductCard from '@/components/ProductCard.vue'
 import { products } from '@/data/products'
 </script>
 
-<script>
-export default {
-  directives: { onView: (await import('@/directives/vOnView.js')).default }
-}
-</script>
+

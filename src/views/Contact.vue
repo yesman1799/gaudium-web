@@ -151,8 +151,4 @@ const handleSubmit = () => {
 }
 </script>
 
-<script>
-export default {
-  directives: { onView: (await import('@/directives/vOnView.js')).default }
-}
-</script>
+

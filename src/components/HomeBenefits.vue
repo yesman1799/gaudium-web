@@ -19,8 +19,4 @@
   </section>
 </template>
 
-<script>
-export default {
-  directives: { onView: (await import('@/directives/vOnView.js')).default }
-}
-</script>
+
