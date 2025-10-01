@@ -32,7 +32,7 @@
   import { ref } from 'vue'
   import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
   
-  const slides = Array.from({ length: 10 }, (_, i) => `/assets/presentations/sanusdent/slide_${i + 1}.jpg`)
+  const slides = Array.from({ length: 11 }, (_, i) => `/assets/presentations/sanusdent/slide_${i + 1}.jpg`)
   const current = ref(0)
   
   const next = () => {
