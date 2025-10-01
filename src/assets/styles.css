@@ -35,3 +35,7 @@
   .floating { animation: float 6s ease-in-out infinite; }
   .delay-1 { animation-delay:.2s } .delay-2 { animation-delay:.4s } .delay-3 { animation-delay:.6s } .delay-4 { animation-delay:.8s }
 }
+
+@media (max-width: 768px){
+  .glass-effect{ background: rgba(254,253,248,0.92) }
+}
