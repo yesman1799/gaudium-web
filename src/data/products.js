@@ -1,15 +1,24 @@
 // src/data/products.js
+
+// 🔧 Helper pro správné bundlování obrázků (Vite)
+const img = (p) => new URL(`../assets/images/${p}`, import.meta.url).href;
+
 export const products = [
   {
     slug: 'formamnon',
     name: 'Formamnon',
+    tagline: '',
     short:
       'Jednoduché složení, vysoká účinnost. Gel s Alaptidem pro cílenou péči při dermatomykózách a dalších kožních potížích.',
     type: 'gel',
     size: '15ml',
     tags: ['Gel', 'Alaptid', 'Cílená péče'],
-    hero: '../src/assets/images/formamnon-hero.jpg', // až bude fotka
-    theme: { from: 'from-mint-light/20', to: 'to-forest-green/20', accent: 'bg-copper-accent/20 text-copper-accent' },
+    hero: img('formamnon-hero.jpg'),
+    theme: {
+      from: 'from-mint-light/20',
+      to: 'to-forest-green/20',
+      accent: 'bg-copper-accent/20 text-copper-accent',
+    },
     sections: [
       {
         title: 'Proč Formamnon',
@@ -37,18 +46,28 @@ export const products = [
         `,
       },
     ],
-    buyLinks: [],
+    buyLinks: [
+      { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/formamnon-s-alaptidem-na-kozni-infekce' },
+      { name: 'Zdravé Plody', url: 'https://zdrave-plody.cz/' },
+      { name: 'NanoAgTive', url: 'https://www.nanoagtive.cz/formamnon/' },
+      { name: 'Salveo', url: 'https://www.salveo.cz/formamnon-gel-na-kuzi-s-alaptidem-gaudium-2022-15-ml' },
+    ],
   },
   {
     slug: 'sanusdent',
     name: 'Sanusdent',
+    tagline: '',
     short:
       'Nepěnivá, šetrná zubní pasta bez SLS a fluoru. S Alaptidem pro péči o dásně a ústní mikroflóru — ideální pro citlivé zuby.',
     type: 'pasta',
     size: '75ml',
     tags: ['Pasta', 'Bez SLS', 'Citlivé zuby'],
-    hero: '../src/assets/images/sanusdent-hero.jpg',
-    theme: { from: 'from-copper-accent/20', to: 'to-sage-muted/20', accent: 'bg-sage-muted/20 text-forest-green' },
+    hero: img('sanusdent-hero.jpg'),
+    theme: {
+      from: 'from-copper-accent/20',
+      to: 'to-sage-muted/20',
+      accent: 'bg-sage-muted/20 text-forest-green',
+    },
     sections: [
       {
         title: 'Co ji dělá jinou',
@@ -62,9 +81,7 @@ export const products = [
       },
       {
         title: 'Pocit svěžesti',
-        html: `
-          <p>Esenciální oleje z hřebíčku a máty přináší dlouhotrvající svěžest a příjemný komfort při čištění.</p>
-        `,
+        html: `<p>Esenciální oleje z hřebíčku a máty přináší dlouhotrvající svěžest a příjemný komfort při čištění.</p>`,
       },
       {
         title: 'Inovace a prevence',
@@ -74,18 +91,28 @@ export const products = [
         `,
       },
     ],
-    buyLinks: [],
+    buyLinks: [
+      { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/sanusdent-zubni-pasta-s-alaptidem' },
+      { name: 'Zdravé Plody', url: 'https://zdrave-plody.cz/' },
+      { name: 'NanoAgTive', url: 'https://www.nanoagtive.cz/sanusdent/' },
+      { name: 'Salveo', url: 'https://www.salveo.cz/zubni-pasta-sanusdent-gaudium-2022-75-ml' },
+    ],
   },
   {
     slug: 'gloria',
     name: 'Gloria',
+    tagline: '',
     short:
       'Hydratační řada s Alaptidem – denní krém a tělové mléko pro hebkou, dlouhodobě vyživenou pokožku.',
     type: 'kosmetika',
     size: '',
     tags: ['Denní krém', 'Tělové mléko', 'Hydratace'],
-    hero: '../src/assets/images/gloria-hero.jpg',
-    theme: { from: 'from-mint-light/20', to: 'to-warm-beige/40', accent: 'bg-mint-light/20 text-forest-green' },
+    hero: img('gloria-hero.jpg'),
+    theme: {
+      from: 'from-mint-light/20',
+      to: 'to-warm-beige/40',
+      accent: 'bg-mint-light/20 text-forest-green',
+    },
     variants: [
       { key: 'krem', label: 'Denní krém', size: '50ml', short: 'Lehký, rychle se vstřebává, pod make-up.' },
       { key: 'mleko', label: 'Tělové mléko', size: '200ml', short: 'Celodenní hebkost bez lepivosti.' },
