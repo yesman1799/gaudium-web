@@ -16,9 +16,8 @@
 
           <!-- Socials -->
           <div class="flex justify-center md:justify-start gap-3 mt-6">
-            <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center">f</a>
-            <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center">ig</a>
-            <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center">in</a>
+            <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center">f</a>            
+            <a class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center" href="https://www.instagram.com/gaudium2022.cz/" target="_blank">ig</a>
           </div>
         </div>
 
