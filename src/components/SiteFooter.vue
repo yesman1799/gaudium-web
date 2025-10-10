@@ -35,8 +35,7 @@
           <div>
             <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
             <ul class="space-y-3 text-white/80">
-              <li><a href="mailto:info@gaudium.cz" class="hover:text-mint-light transition-colors">info@gaudium.cz</a></li>
-              <li><a href="tel:+420123456789" class="hover:text-mint-light transition-colors">+420 123 456 789</a></li>
+              <li><a href="mailto:info@gaudium2022.cz" class="hover:text-mint-light transition-colors">info@gaudium2022.cz</a></li>
             </ul>
           </div>
         </div>

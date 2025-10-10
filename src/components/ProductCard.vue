@@ -1,73 +1,60 @@
 <template>
-  <article
-    v-on-view
-    class="bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift slide-in-right"
-    :class="delay"
+  <div
+    class="group rounded-3xl overflow-hidden shadow-lg bg-white flex flex-col transition-all duration-300 hover:shadow-2xl"
   >
-    <!-- Hero area (fallback SVG, když není fotka) -->
-    <div class="h-64 flex items-center justify-center"
-         :class="['bg-gradient-to-br', product.theme?.from || 'from-mint-light/20', product.theme?.to || 'to-forest-green/20']">
-      <img v-if="product.hero" :src="product.hero" :alt="product.name" class="max-h-56 object-contain" />
-      <Packshot v-else :type="product.type" :letter="product.name?.[0] || 'G'"/>
+    <!-- HERO IMAGE FULL-WIDTH TOP -->
+    <div class="relative w-full aspect-[5/3]">
+      <img
+        :src="product.hero"
+        :alt="product?.name ?? 'Product image'"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     </div>
 
-    <div class="p-10">
-      <h3 class="text-3xl font-bold text-forest-dark mb-3">{{ product.name }}</h3>
-      <p v-if="product.tagline" class="text-forest-green/90 mb-1 font-medium italic">
-        {{ product.tagline }}
-      </p>
-      <p class="text-forest-green/80 mb-8 text-lg leading-relaxed">
+    <!-- TEXT CONTENT -->
+    <div class="p-6 flex flex-col gap-3">
+      <h2 class="text-2xl font-bold text-forest-green group-hover:text-copper-accent transition-colors duration-300">
+        {{ product.name }}
+      </h2>
+      <p class="text-forest-green/80 text-base leading-relaxed">
         {{ product.short }}
       </p>
 
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2 flex-wrap">
-          <span v-for="t in (product.tags||[])" :key="t"
-                class="bg-mint-light/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium">{{ t }}</span>
-          <span v-if="product.size"
-                class="px-3 py-1 rounded-full text-sm font-medium"
-                :class="product.theme?.accent || 'bg-copper-accent/20 text-copper-accent'">{{ product.size }}</span>
-        </div>
-
-        <RouterLink :to="'/produkty/'+product.slug"
-                    class="bg-gradient-to-r from-forest-green to-mint-light text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all">
-          Detail
-        </RouterLink>
+      <!-- TAGS -->
+      <div class="flex flex-wrap gap-2 mt-3">
+        <span
+          v-for="tag in product.tags"
+          :key="tag"
+          class="px-3 py-1 text-sm rounded-full bg-forest-green/10 text-forest-green"
+        >
+          {{ tag }}
+        </span>
       </div>
+
+      <!-- CTA BUTTON -->
+      <RouterLink
+        :to="`/produkty/${product.slug}`"
+        class="mt-6 inline-block self-start bg-forest-green text-white px-5 py-2 rounded-full font-medium transition-all duration-300 hover:bg-copper-accent"
+      >
+        Zobrazit detail
+      </RouterLink>
     </div>
-  </article>
+  </div>
 </template>
 
 <script setup>
 defineProps({
-  product: { type: Object, required: true },
-  delay: { type: String, default: '' }
-})
-
-/** Minimalistický SVG packshot (bez fotky) */
-const Packshot = {
-  props: { type: String, letter: String },
-  computed: {
-    palette() {
-      const map = {
-        gel:        { ring: '#7FB069', rail: '#B5651D' },
-        pasta:      { ring: '#B5651D', rail: '#7FB069' },
-        kosmetika:  { ring: '#A8B5A0', rail: '#7FB069' },
-      }
-      return map[this.type] || map.kosmetika
-    }
+  product: {
+    type: Object,
+    required: true,
   },
-  template: `
-    <svg class="w-48 h-48" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-      <rect x="40" y="60" width="120" height="80" rx="20" fill="white" stroke="#2D5A4F" stroke-width="2"/>
-      <circle cx="100" cy="100" r="25" :fill="palette.ring" opacity="0.3"/>
-      <text x="100" y="107" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3B36">{{ letter }}</text>
-      <rect x="50" y="120" width="100" height="6" rx="3" :fill="palette.rail"/>
-      <circle cx="60" cy="80" r="3" :fill="palette.ring"/>
-      <circle cx="140" cy="80" r="3" :fill="palette.ring"/>
-    </svg>
-  `
-}
+});
 </script>
 
-
+<style scoped>
+/* můžeš přidat drobný přechod stínu */
+.group:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+</style>

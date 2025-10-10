@@ -27,18 +27,7 @@
             </div>
           </div>
 
-          <ul class="space-y-5">
-            <li class="flex gap-4 items-start">
-              <div class="w-10 h-10 rounded-xl bg-mint-light/20 text-forest-green flex items-center justify-center shrink-0">
-                <!-- phone icon -->
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v2a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.09 4.18 2 2 0 0 1 5 2h2a2 2 0 0 1 2 1.72c.12.9.33 1.77.64 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.48a2 2 0 0 1 2.11-.45c.83.31 1.7.52 2.6.64A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <p class="text-sm text-forest-green/70">Telefon</p>
-                <a href="tel:+420776251226" class="text-lg font-semibold text-forest-dark hover:text-mint-light transition-colors">+420&nbsp;776&nbsp;251&nbsp;226</a>
-              </div>
-            </li>
-
+          <ul class="space-y-5">            
             <li class="flex gap-4 items-start">
               <div class="w-10 h-10 rounded-xl bg-mint-light/20 text-forest-green flex items-center justify-center shrink-0">
                 <!-- mail icon -->

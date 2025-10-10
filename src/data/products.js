@@ -8,7 +8,7 @@ export const products = [
     type: 'gel',
     size: '15ml',
     tags: ['Gel', 'Alaptid', 'Cílená péče'],
-    hero: '', // až bude fotka
+    hero: '../src/assets/images/formamnon-hero.jpg', // až bude fotka
     theme: { from: 'from-mint-light/20', to: 'to-forest-green/20', accent: 'bg-copper-accent/20 text-copper-accent' },
     sections: [
       {
@@ -47,7 +47,7 @@ export const products = [
     type: 'pasta',
     size: '75ml',
     tags: ['Pasta', 'Bez SLS', 'Citlivé zuby'],
-    hero: '',
+    hero: '../src/assets/images/sanusdent-hero.jpg',
     theme: { from: 'from-copper-accent/20', to: 'to-sage-muted/20', accent: 'bg-sage-muted/20 text-forest-green' },
     sections: [
       {
@@ -84,7 +84,7 @@ export const products = [
     type: 'kosmetika',
     size: '',
     tags: ['Denní krém', 'Tělové mléko', 'Hydratace'],
-    hero: '',
+    hero: '../src/assets/images/gloria-hero.jpg',
     theme: { from: 'from-mint-light/20', to: 'to-warm-beige/40', accent: 'bg-mint-light/20 text-forest-green' },
     variants: [
       { key: 'krem', label: 'Denní krém', size: '50ml', short: 'Lehký, rychle se vstřebává, pod make-up.' },
