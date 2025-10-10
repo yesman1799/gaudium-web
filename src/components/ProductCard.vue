@@ -58,9 +58,9 @@
           </span>
         </div>
 
-        <!-- původní tlačítko -->
+        <!-- tlačítko – zachováno, jen využívá basePath -->
         <RouterLink
-          :to="'/produkty/'+product.slug"
+          :to="`${basePath}/${product.slug}`"
           class="bg-gradient-to-r from-forest-green to-mint-light text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all"
         >
           Detail
@@ -82,7 +82,6 @@
             rel="noopener noreferrer"
             class="group inline-flex items-center gap-2 px-4 py-2 rounded-full border border-forest-green/10 bg-mint-light/10 hover:bg-mint-light/20 hover:border-forest-green/20 transition-colors"
           >
-            <!-- ikonka podle e-shopu -->
             <ShopIcon :shop="link.name" :url="link.url" class="w-5 h-5 text-forest-green/80 group-hover:text-forest-green" />
             <span class="text-sm font-medium text-forest-green">{{ link.name }}</span>
             <svg class="w-4 h-4 text-forest-green/60 group-hover:text-forest-green" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -99,6 +98,7 @@
 defineProps({
   product: { type: Object, required: true },
   delay: { type: String, default: '' },
+  basePath: { type: String, default: '/produkty' } // ← NOVÉ, ale UI beze změny
 })
 
 /** Minimalistický SVG packshot (bez fotky) */
@@ -110,6 +110,7 @@ const Packshot = {
         gel:        { ring: '#7FB069', rail: '#B5651D' },
         pasta:      { ring: '#B5651D', rail: '#7FB069' },
         kosmetika:  { ring: '#A8B5A0', rail: '#7FB069' },
+        'doplněk stravy': { ring: '#FFB020', rail: '#7FB069' },
       }
       return map[this.type] || map.kosmetika
     },
@@ -126,10 +127,7 @@ const Packshot = {
   `,
 }
 
-/**
- * Ikonka e-shopu dle názvu/URL (monochrom, čisté tvary).
- * Nepotřebuje žádné externí assety.
- */
+/** Ikonka e-shopu dle názvu/URL */
 const ShopIcon = {
   props: { shop: String, url: String },
   computed: {
@@ -144,33 +142,19 @@ const ShopIcon = {
   },
   template: `
     <svg v-if="key==='zdrave'" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <!-- list/leaf -->
       <path d="M20 4c-7.5 0-12.5 4.7-14.7 9.9-.6 1.4.7 2.9 2.1 2.5 4.9-1.3 9.6-5.6 11.6-8.6-.6 3.2-3.1 7.3-6.7 10.2-.9.7-.5 2.1.7 2.2 5 .5 8-3.9 8-9.7 0-2.4-.3-4.2-1-6.5Z"/>
     </svg>
-
     <svg v-else-if="key==='detox'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <!-- medical cross in rounded square -->
-      <rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/>
-      <path d="M12 7.5v9M7.5 12h9"/>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M12 7.5v9M7.5 12h9"/>
     </svg>
-
     <svg v-else-if="key==='nano'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <!-- simple atom -->
-      <circle cx="12" cy="12" r="1.8" fill="currentColor"/>
-      <ellipse cx="12" cy="12" rx="8" ry="3.5"/>
-      <ellipse cx="12" cy="12" rx="3.5" ry="8" transform="rotate(60 12 12)"/>
-      <ellipse cx="12" cy="12" rx="3.5" ry="8" transform="rotate(-60 12 12)"/>
+      <circle cx="12" cy="12" r="1.8" fill="currentColor"/><ellipse cx="12" cy="12" rx="8" ry="3.5"/><ellipse cx="12" cy="12" rx="3.5" ry="8" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="3.5" ry="8" transform="rotate(-60 12 12)"/>
     </svg>
-
     <svg v-else-if="key==='salveo'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <!-- capsule -->
       <path d="M8 16l8-8m-6.5 9.5a4.5 4.5 0 0 1-6.4-6.4l5-5a4.5 4.5 0 0 1 6.4 6.4l-5 5Z"/>
     </svg>
-
     <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <!-- generic bag -->
-      <path d="M6 8h12l-1 11H7L6 8Z"/>
-      <path d="M9 8V6a3 3 0 1 1 6 0v2"/>
+      <path d="M6 8h12l-1 11H7L6 8Z"/><path d="M9 8V6a3 3 0 1 1 6 0v2"/>
     </svg>
   `,
 }

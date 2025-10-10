@@ -1,18 +1,18 @@
 // src/data/supplements.js
-// Suplementy / Doplňky stravy – data pro karty a detail
+// Suplementy / Doplňky stravy – stejné pole jako u kosmetiky
 
 export const supplements = [
   {
-    group: 'suplementy',
     slug: 'power-c-complex',
     name: 'Power C-Complex',
     type: 'doplněk stravy',
     size: '30 kapslí',
     tags: ['Imunita', 'Energie', 'Antioxidant', 'Slow release'],
-    hero: '', // doplníš až bude vizuál
-    theme: { from: 'from-amber-50', to: 'to-orange-100', accent: 'bg-orange-500/10 text-orange-700' },
+    hero: '', // až bude packshot
+    tagline: 'Chytrý vitamin C s přidanou hodnotou',
+    theme: { from: 'from-amber-50', to: 'to-orange-100', accent: 'bg-copper-accent/20 text-copper-accent' },
     short:
-      'Inteligentní vitamin C (800 mg) s extraktem z kozince, myo-inositolem a IP6. Slow release pro maximální využití, imunita a buněčná vitalita.',
+      'Inteligentní vitamin C (800 mg) s extraktem z kozince, myo-inositolem a IP6. Slow-release pro lepší využití, imunita a buněčná vitalita.',
     sections: [
       {
         title: 'Proč Power C-Complex',
@@ -26,7 +26,7 @@ export const supplements = [
         html: `
           <ul class="list-disc pl-5 space-y-1">
             <li>Podpora imunity a energie</li>
-            <li>Silný antioxidant – ochrana buněk před oxidačním stresem</li>
+            <li>Silný antioxidant – ochrana buněk</li>
             <li>Postupné uvolňování pro lepší využití</li>
             <li>Podpora kolagenu (cévy, kůže, dásně, kosti)</li>
           </ul>
@@ -40,23 +40,23 @@ export const supplements = [
         `
       }
     ],
-    eshops: [
+    buyLinks: [
       { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/' },
       { name: 'Zdravé plody', url: 'https://zdrave-plody.cz/' }
     ]
   },
 
   {
-    group: 'suplementy',
     slug: 'memory-balance',
     name: 'Memory & Balance',
     type: 'doplněk stravy',
     size: '60 kapslí',
     tags: ['Paměť', 'Soustředění', 'Stres', 'Kognice'],
     hero: '',
-    theme: { from: 'from-sky-50', to: 'to-indigo-100', accent: 'bg-indigo-500/10 text-indigo-700' },
+    tagline: 'Síla přírody pro vaši mysl a rovnováhu',
+    theme: { from: 'from-sky-50', to: 'to-indigo-100', accent: 'bg-copper-accent/20 text-copper-accent' },
     short:
-      'Komplex pro paměť, soustředění a duševní rovnováhu: CDP-cholin, Bacopa, Ashwagandha, Ginkgo, L-theanin a vitamin B3.',
+      'Komplex pro paměť, fokus a zvládání stresu: CDP-cholin, Bacopa, Ashwagandha, Ginkgo, L-theanin a vitamin B3.',
     sections: [
       {
         title: 'Co dělá Memory & Balance',
@@ -66,32 +66,32 @@ export const supplements = [
         title: 'Aktivní složky',
         html: `
           <ul class="list-disc pl-5 space-y-1">
-            <li><strong>Citikolin (CDP-cholin):</strong> neurotransmitery, prokrvení mozku.</li>
-            <li><strong>Bacopa monnieri:</strong> paměť, fokus, antioxidant.</li>
-            <li><strong>Ashwagandha:</strong> adaptogen pro stres a spánek.</li>
-            <li><strong>Ginkgo biloba:</strong> oběh a kognitivní funkce.</li>
-            <li><strong>L-theanin:</strong> klid bez ospalosti, lepší fokus.</li>
-            <li><strong>Vitamin B3 (niacin):</strong> energie a nervová soustava.</li>
+            <li><strong>Citikolin (CDP-cholin):</strong> neurotransmitery a prokrvení mozku</li>
+            <li><strong>Bacopa monnieri:</strong> paměť, fokus, antioxidant</li>
+            <li><strong>Ashwagandha:</strong> adaptogen pro stres a spánek</li>
+            <li><strong>Ginkgo biloba:</strong> oběh a kognitivní funkce</li>
+            <li><strong>L-theanin:</strong> klid bez ospalosti, lepší fokus</li>
+            <li><strong>Vitamin B3 (niacin):</strong> energie a nervová soustava</li>
           </ul>
           <p class="mt-2 text-sm opacity-80"><strong>Upozornění:</strong> Při užívání léků na ředění krve konzultujte s lékařem.</p>
         `
       }
     ],
-    eshops: [
+    buyLinks: [
       { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/' },
       { name: 'Zdravé plody', url: 'https://zdrave-plody.cz/' }
     ]
   },
 
   {
-    group: 'suplementy',
     slug: 'alafit-plus',
     name: 'Alafit Plus',
     type: 'doplněk stravy',
     size: '60 kapslí',
     tags: ['Energie', 'Regenerace', 'Imunita', 'Krása'],
     hero: '',
-    theme: { from: 'from-emerald-50', to: 'to-teal-100', accent: 'bg-emerald-500/10 text-emerald-700' },
+    tagline: 'Energie, regenerace a krása v jedné kapsli',
+    theme: { from: 'from-emerald-50', to: 'to-teal-100', accent: 'bg-copper-accent/20 text-copper-accent' },
     short:
       'Synergie pro energii, regeneraci a krásu: beta-glukan, BCAA, L-karnitin, L-arginin, L-cystein, zinek a amygdalin.',
     sections: [
@@ -118,12 +118,9 @@ export const supplements = [
         `
       }
     ],
-    eshops: [
+    buyLinks: [
       { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/' },
       { name: 'Zdravé plody', url: 'https://zdrave-plody.cz/' }
     ]
   }
-]
-
-export const getSupplementBySlug = (slug) =>
-  supplements.find((p) => p.slug === slug)
+];

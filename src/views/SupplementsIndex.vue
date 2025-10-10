@@ -1,38 +1,31 @@
-<script setup>
-import { supplements } from '@/data/supplements'
-</script>
-
+<!-- src/views/SupplementsIndex.vue -->
 <template>
-  <section class="mx-auto max-w-6xl px-4 py-12">
-    <header class="mb-8">
-      <h1 class="text-3xl font-semibold">Suplementy / doplňky stravy</h1>
-      <p class="mt-2 text-zinc-600">Vyber si produkt pro detailní popis, benefity a kde koupit.</p>
-    </header>
-
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <router-link
-        v-for="p in supplements.filter(s => s.slug !== 'tbd-4th-product')"
-        :key="p.slug"
-        :to="`/suplementy/${p.slug}`"
-        class="group relative overflow-hidden rounded-2xl border border-zinc-200/60 bg-white p-6 shadow-sm transition hover:shadow-md"
-      >
-        <div class="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br" :class="[p.theme.from, p.theme.to]"></div>
-
-        <div class="relative">
-          <h3 class="text-xl font-bold text-zinc-900">{{ p.name }}</h3>
-          <p class="mt-2 text-zinc-700 line-clamp-3" v-html="p.short" />
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span v-for="t in p.tags" :key="t"
-              class="rounded-full bg-white/60 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-zinc-200/70">
-              {{ t }}
-            </span>
-          </div>
-
-          <div class="mt-5 inline-flex items-center gap-2 font-medium text-zinc-900">
-            Detail <span aria-hidden="true">→</span>
-          </div>
+  <section class="pt-36 pb-24 bg-warm-beige min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
+      <div v-on-view class="text-center mb-20 slide-in">
+        <div class="inline-block bg-mint-light/20 text-forest-green px-6 py-3 rounded-full text-sm font-semibold mb-8">
+          NAŠE PRODUKTY
         </div>
-      </router-link>
+        <h1 class="text-5xl font-bold text-gradient mb-8">Suplementy / doplňky stravy</h1>
+        <p class="text-xl text-forest-green/70 max-w-3xl mx-auto">
+          Stejná filozofie jako u kosmetiky. Čisté složení, vysoká účinnost, Alaptid-mindset.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+        <ProductCard
+          v-for="(p, i) in supplements"
+          :key="p.slug"
+          :product="p"
+          :delay="i % 2 ? 'delay-2' : 'delay-1'"
+          :basePath="'/suplementy'"
+        />
+      </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import ProductCard from '@/components/ProductCard.vue'
+import { supplements } from '@/data/supplements'
+</script>

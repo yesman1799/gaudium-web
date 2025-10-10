@@ -24,47 +24,46 @@
           :delay="i % 2 ? 'delay-2' : 'delay-1'"
         />
 
-        <!-- NOVÁ KARTA: Suplementy / doplňky stravy -->
-        <router-link
+        <!-- karta sekce Suplementy – stejný vizuál -->
+        <RouterLink
           to="/suplementy"
-          class="group relative block overflow-hidden rounded-3xl border border-forest-green/10 bg-white/90 shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-forest-green/30"
+          v-on-view
+          class="bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift slide-in-right"
         >
-          <!-- pozadí -->
-          <div class="absolute inset-0 -z-10 bg-gradient-to-br from-amber-50 via-orange-50 to-orange-100 opacity-70 group-hover:opacity-90 transition"></div>
+          <!-- HERO -->
+          <div class="relative h-72 md:h-84 lg:h-96 bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center">
+            <svg class="w-48 h-48" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+              <rect x="40" y="60" width="120" height="80" rx="20" fill="white" stroke="#2D5A4F" stroke-width="2"/>
+              <circle cx="100" cy="100" r="25" fill="#FFB020" opacity="0.25"/>
+              <text x="100" y="107" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3B36">S</text>
+              <rect x="50" y="120" width="100" height="6" rx="3" fill="#7FB069"/>
+              <circle cx="60" cy="80" r="3" fill="#FFB020"/>
+              <circle cx="140" cy="80" r="3" fill="#FFB020"/>
+            </svg>
+          </div>
 
-          <div class="p-8 md:p-10">
-            <div class="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1.5 text-xs font-semibold text-orange-700 ring-1 ring-orange-200">
-              Nová podskupina
+          <!-- CONTENT -->
+          <div class="p-10 flex flex-col gap-6">
+            <div>
+              <h3 class="text-3xl font-bold text-forest-dark mb-3">Suplementy / doplňky stravy</h3>
+              <p class="text-forest-green/80 mb-8 text-lg leading-relaxed">
+                Prémiové formulace pro <strong>imunitu</strong>, <strong>energii</strong> a <strong>mentální rovnováhu</strong>.
+              </p>
             </div>
 
-            <h3 class="mt-4 text-3xl font-bold text-forest-green">
-              Suplementy / doplňky stravy
-            </h3>
+            <div class="flex items-center justify-between flex-wrap gap-3">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="bg-mint-light/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium">Power C-Complex</span>
+                <span class="bg-mint-light/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium">Memory & Balance</span>
+                <span class="bg-mint-light/20 text-forest-green px-3 py-1 rounded-full text-sm font-medium">Alafit Plus</span>
+              </div>
 
-            <p class="mt-3 text-forest-green/70 text-lg">
-              Prémiové formulace pro <strong>imunitu</strong>, <strong>energii</strong> a <strong>mentální rovnováhu</strong>.
-            </p>
-
-            <ul class="mt-6 grid gap-2 text-forest-green/80">
-              <li class="flex items-start gap-2">
-                <span class="mt-1">•</span>
-                <span><strong>Power C-Complex</strong> — chytrý vitamín C (slow-release, Astragalus, myo-inositol, IP6)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1">•</span>
-                <span><strong>Memory & Balance</strong> — paměť, fokus, stres (CDP-cholin, Bacopa, Ashwagandha, Ginkgo, L-theanin, B3)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1">•</span>
-                <span><strong>Alafit Plus</strong> — energie, regenerace, krása (beta-glukan, BCAA, L-karnitin, cystein, arginin, zinek, B17)</span>
-              </li>
-            </ul>
-
-            <div class="mt-8 inline-flex items-center gap-2 font-semibold text-orange-700">
-              Prohlédnout suplementy <span aria-hidden="true">→</span>
+              <span class="bg-gradient-to-r from-forest-green to-mint-light text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all">
+                Prohlédnout
+              </span>
             </div>
           </div>
-        </router-link>
+        </RouterLink>
       </div>
     </div>
   </section>
