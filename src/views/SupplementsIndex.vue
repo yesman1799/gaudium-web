@@ -8,7 +8,7 @@
         </div>
         <h1 class="text-5xl font-bold text-gradient mb-8">Suplementy / doplňky stravy</h1>
         <p class="text-xl text-forest-green/70 max-w-3xl mx-auto">
-          Stejná filozofie jako u kosmetiky. Čisté složení, vysoká účinnost, Alaptid-mindset.
+          Stejná filozofie jako u kosmetiky. Čisté složení a vysoká účinnost.
         </p>
       </div>
 

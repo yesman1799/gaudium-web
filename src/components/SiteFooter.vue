@@ -29,6 +29,8 @@
               <li><RouterLink to="/produkty/formamnon" class="hover:text-mint-light transition-colors">Formamnon gel</RouterLink></li>
               <li><RouterLink to="/produkty/sanusdent" class="hover:text-mint-light transition-colors">Sanusdent pasta</RouterLink></li>
               <li><RouterLink to="/produkty/gloria" class="hover:text-mint-light transition-colors">Gloria</RouterLink></li>
+              <!-- NOVÉ: odkaz na novou sekci produktů -->
+              <li><RouterLink to="/suplementy" class="hover:text-mint-light transition-colors">Suplementy / doplňky stravy</RouterLink></li>
             </ul>
           </div>
           <div>

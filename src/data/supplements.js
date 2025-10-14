@@ -120,7 +120,8 @@ export const supplements = [
     ],
     buyLinks: [
       { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/' },
-      { name: 'Zdravé plody', url: 'https://zdrave-plody.cz/' }
+      { name: 'Zdravé plody', url: 'https://zdrave-plody.cz/' },
+      { name: 'Green store', url: 'https://www.greenstore.cz/' }
     ]
   }
 ];

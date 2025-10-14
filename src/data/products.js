@@ -51,6 +51,7 @@ export const products = [
       { name: 'Zdravé Plody', url: 'https://zdrave-plody.cz/' },
       { name: 'NanoAgTive', url: 'https://www.nanoagtive.cz/formamnon/' },
       { name: 'Salveo', url: 'https://www.salveo.cz/formamnon-gel-na-kuzi-s-alaptidem-gaudium-2022-15-ml' },
+      { name: 'Green store', url: 'https://www.greenstore.cz/formamnon-gel-na-kuzi-s-alaptidem-15mll' }
     ],
   },
   {
@@ -96,6 +97,7 @@ export const products = [
       { name: 'Zdravé Plody', url: 'https://zdrave-plody.cz/' },
       { name: 'NanoAgTive', url: 'https://www.nanoagtive.cz/sanusdent/' },
       { name: 'Salveo', url: 'https://www.salveo.cz/zubni-pasta-sanusdent-gaudium-2022-75-ml' },
+      { name: 'Green store', url: 'https://www.greenstore.cz/sanusdent-zubni-pasta-s-alaptidem-75ml' }
     ],
   },
   {
