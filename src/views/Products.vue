@@ -31,15 +31,9 @@
           class="bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift slide-in-right"
         >
           <!-- HERO -->
-          <div class="relative h-72 md:h-84 lg:h-96 bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center">
-            <svg class="w-48 h-48" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-              <rect x="40" y="60" width="120" height="80" rx="20" fill="white" stroke="#2D5A4F" stroke-width="2"/>
-              <circle cx="100" cy="100" r="25" fill="#FFB020" opacity="0.25"/>
-              <text x="100" y="107" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3B36">S</text>
-              <rect x="50" y="120" width="100" height="6" rx="3" fill="#7FB069"/>
-              <circle cx="60" cy="80" r="3" fill="#FFB020"/>
-              <circle cx="140" cy="80" r="3" fill="#FFB020"/>
-            </svg>
+          <div class="relative h-72 md:h-84 lg:h-96">
+            <img :src="suplementyHero" alt="Suplementy Gaudium" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/15"></div>
           </div>
 
           <!-- CONTENT -->
@@ -72,4 +66,6 @@
 <script setup>
 import ProductCard from '@/components/ProductCard.vue'
 import { products } from '@/data/products'
+const suplementyHero = new URL('@/assets/images/suplementy-hero.jpg', import.meta.url).href
+
 </script>

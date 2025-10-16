@@ -1,69 +1,106 @@
 <!-- src/views/Home.vue -->
 <template>
-  <!-- HERO -->
-  <section class="min-h-screen gradient-bg flex items-center pt-32 pb-20">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-      <div v-on-view class="slide-in">
-        <div class="inline-block bg-mint-light/20 text-forest-green px-4 py-2 rounded-full text-sm font-medium mb-6">
-          🌿 Revoluční Alaptid komplex
-        </div>
-        <h1 class="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-          <span class="text-gradient">Příroda</span><br />
-          <span class="text-forest-green">&amp; Věda</span><br />
-          <span class="text-mint-light">v harmonii</span>
-        </h1>
-        <p class="text-xl text-forest-green/80 mb-10 leading-relaxed max-w-lg">
-          Objevte budoucnost přírodní kosmetiky. Naše produkty kombinují tisíciletou moudrost přírody s nejmodernějšími vědeckými poznatky.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <RouterLink
-            to="/produkty"
-            class="bg-gradient-to-r from-forest-green to-mint-light text-white px-10 py-5 rounded-2xl font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all"
-          >
-            Prozkoumat produkty
-          </RouterLink>
-          <a
-            href="#science"
-            class="border-2 border-forest-green text-forest-green px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-forest-green hover:text-white transition-all"
-          >
-            Vědecké studie
-          </a>
-        </div>
+  <!-- HERO (Carousel) -->
+  <section class="relative w-screen h-[88svh] md:h-[85vh] overflow-hidden">
+    <!-- Slides -->
+    <div class="absolute inset-0">
+      <div
+        v-for="(img, i) in carouselImages"
+        :key="i"
+        class="absolute inset-0 transition-opacity duration-700 ease-out"
+        :class="currentSlide === i ? 'opacity-100' : 'opacity-0'"
+      >
+        <img :src="img" alt="" class="w-screen h-full object-cover" />
+        <div class="absolute inset-0 bg-black/25"></div>
       </div>
+    </div>
 
-      <div v-on-view class="slide-in-right delay-2">
-        <div class="relative floating">
-          <!-- dekorativní SVG -->
-          <svg class="w-full h-[600px]" viewBox="0 0 500 500" fill="none" aria-hidden="true">
-            <ellipse cx="250" cy="250" rx="200" ry="280" fill="url(#leafGradient)" opacity="0.1"/>
-            <path d="M250 50 C300 100, 350 150, 380 220 C350 290, 300 350, 250 400 C200 350, 150 290, 120 220 C150 150, 200 100, 250 50 Z" fill="url(#leafGradient)"/>
-            <path d="M250 80 C280 110, 310 140, 330 180 C310 220, 280 250, 250 280 C220 250, 190 220, 170 180 C190 140, 220 110, 250 80 Z" fill="#2D5A4F"/>
-            <line x1="250" y1="80"  x2="250" y2="280" stroke="#1B3B36" stroke-width="3"/>
-            <path d="M250 120 Q280 140, 300 170" stroke="#1B3B36" stroke-width="2" fill="none"/>
-            <path d="M250 120 Q220 140, 200 170" stroke="#1B3B36" stroke-width="2" fill="none"/>
-            <path d="M250 160 Q275 175, 290 200" stroke="#1B3B36" stroke-width="2" fill="none"/>
-            <path d="M250 160 Q225 175, 210 200" stroke="#1B3B36" stroke-width="2" fill="none"/>
+    <!-- Content overlay  -->
+    <div class="relative h-full flex items-start lg:items-center">
+      <div class="w-full">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div
+            v-on-view
+            class="slide-in relative z-10
+                  /* move down under navbar on mobile/tablet */
+                  mt-24 sm:mt-28
+                  /* also push down on desktop */
+                  lg:mt-16 xl:mt-20
+                  /* readable panel */
+                  backdrop-blur-md bg-white/50 lg:bg-white/35
+                  rounded-2xl lg:rounded-3xl
+                  p-5 sm:p-7 lg:p-9
+                  shadow-lg border border-white/30
+                  /* slimmer on phone, comfy on desktop */
+                  max-w-[19rem] sm:max-w-md md:max-w-lg lg:max-w-xl"
+          >
+            <div class="inline-block bg-mint-light/30 text-forest-green px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              🌿 Revoluční Alaptid komplex
+            </div>
 
-            <g opacity="0.7">
-              <circle cx="400" cy="150" r="30" fill="none" stroke="#B5651D" stroke-width="3"/>
-              <circle cx="400" cy="150" r="15" fill="#B5651D" opacity="0.3"/>
-              <circle cx="420" cy="130" r="8"  fill="#B5651D"/>
-              <circle cx="380" cy="170" r="8"  fill="#B5651D"/>
-              <line x1="400" y1="150" x2="420" y2="130" stroke="#B5651D" stroke-width="2"/>
-              <line x1="400" y1="150" x2="380" y2="170" stroke="#B5651D" stroke-width="2"/>
-            </g>
+            <!-- slightly smaller on desktop so everything fits -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-5 sm:mb-7 lg:mb-6 leading-tight text-forest-dark">
+              <span class="text-gradient">Příroda</span><br />
+              <span class="text-forest-green">&amp; Věda</span><br />
+              <span class="text-mint-light">v harmonii</span>
+            </h1>
 
-            <defs>
-              <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"  stop-color="#7FB069"/>
-                <stop offset="100%" stop-color="#2D5A4F"/>
-              </linearGradient>
-            </defs>
-          </svg>
+            <p class="text-base sm:text-lg md:text-lg lg:text-[18px] text-forest-dark/80 mb-6 sm:mb-7 lg:mb-8 leading-relaxed">
+              Objevte budoucnost přírodní kosmetiky. Naše produkty kombinují tisíciletou moudrost přírody s nejmodernějšími
+              vědeckými poznatky.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <RouterLink
+                to="/produkty"
+                class="bg-gradient-to-r from-forest-green to-mint-light text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:shadow-xl transform hover:scale-105 transition-all"
+              >
+                Prozkoumat produkty
+              </RouterLink>
+              <a
+                href="#science"
+                class="border-2 border-forest-green text-forest-green px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:bg-forest-green hover:text-white transition-all"
+              >
+                Vědecké studie
+              </a>
+            </div>
+          </div>
+
+          <div class="hidden lg:block"></div>
         </div>
       </div>
     </div>
+
+
+    <!-- Dots -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+      <button
+        v-for="(img, i) in carouselImages"
+        :key="'dot-'+i"
+        class="h-2.5 w-2.5 rounded-full transition-all"
+        :class="currentSlide === i ? 'bg-white w-6' : 'bg-white/60 hover:bg-white/80'"
+        @click="goTo(i)"
+        aria-label="Go to slide"
+      />
+    </div>
+
+    <!-- Arrows -->
+    <button
+      class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/40 text-white rounded-full w-10 h-10 grid place-items-center"
+      @click="prev"
+      aria-label="Previous slide"
+    >
+      ‹
+    </button>
+    <button
+      class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/40 text-white rounded-full w-10 h-10 grid place-items-center"
+      @click="next"
+      aria-label="Next slide"
+    >
+      ›
+    </button>
   </section>
+
 
   <!-- ABOUT -->
   <section id="about" class="py-24 bg-white">
@@ -128,23 +165,17 @@
           :delay="i % 2 ? 'delay-2' : 'delay-1'"
         />
 
-        <!-- NOVÁ karta: Suplementy / doplňky stravy (stejný vizuál jako ProductCard) -->
+        <!-- NOVÁ karta: Suplementy / doplňky stravy -->
         <RouterLink
           to="/suplementy"
           v-on-view
           class="bg-white rounded-3xl overflow-hidden shadow-2xl hover-lift slide-in-right"
         >
           <!-- HERO -->
-          <div class="relative h-72 md:h-84 lg:h-96 bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center">
-            <svg class="w-48 h-48" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-              <rect x="40" y="60" width="120" height="80" rx="20" fill="white" stroke="#2D5A4F" stroke-width="2"/>
-              <circle cx="100" cy="100" r="25" fill="#FFB020" opacity="0.25"/>
-              <text x="100" y="107" text-anchor="middle" font-size="24" font-weight="700" fill="#1B3B36">S</text>
-              <rect x="50" y="120" width="100" height="6" rx="3" fill="#7FB069"/>
-              <circle cx="60" cy="80" r="3" fill="#FFB020"/>
-              <circle cx="140" cy="80" r="3" fill="#FFB020"/>
-            </svg>
-          </div>
+          <div class="relative h-72 md:h-84 lg:h-96">
+          <img :src="suplementyHero" alt="Suplementy Gaudium" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-black/15"></div>
+        </div>
 
           <!-- CONTENT -->
           <div class="p-10 flex flex-col gap-6">
@@ -269,4 +300,30 @@
 <script setup>
 import ProductCard from '@/components/ProductCard.vue'
 import { products } from '@/data/products'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+// Carousel images (replace with your own assets later if you want)
+const carouselImages = [
+  'src/assets/images/carousel1.jpg',
+  'src/assets/images/carousel2.jpg',
+  'src/assets/images/carousel3.jpg',
+  'src/assets/images/carousel4.jpg'
+]
+
+const suplementyHero = new URL('@/assets/images/suplementy-hero.jpg', import.meta.url).href
+
+const currentSlide = ref(0)
+let timerId
+
+const next = () => (currentSlide.value = (currentSlide.value + 1) % carouselImages.length)
+const prev = () => (currentSlide.value = (currentSlide.value - 1 + carouselImages.length) % carouselImages.length)
+const goTo = (i) => (currentSlide.value = i)
+
+onMounted(() => {
+  timerId = setInterval(next, 5000) // auto-play every 5s
+})
+
+onBeforeUnmount(() => {
+  if (timerId) clearInterval(timerId)
+})
 </script>
