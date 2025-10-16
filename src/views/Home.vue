@@ -302,14 +302,24 @@ import ProductCard from '@/components/ProductCard.vue'
 import { products } from '@/data/products'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-// Carousel images (replace with your own assets later if you want)
+// ✅ Use Vite-resolved URLs so build rewrites the asset paths correctly
+// This file is at src/views/Home.vue, so use a RELATIVE path to /src/assets
 const carouselImages = [
-  'src/assets/images/carousel1.jpg',
-  'src/assets/images/carousel2.jpg',
-  'src/assets/images/carousel3.jpg',
-  'src/assets/images/carousel4.jpg'
+  new URL('../assets/images/carousel1.jpg', import.meta.url).href,
+  new URL('../assets/images/carousel2.jpg', import.meta.url).href,
+  new URL('../assets/images/carousel3.jpg', import.meta.url).href,
+  new URL('../assets/images/carousel4.jpg', import.meta.url).href,
 ]
 
+// If you prefer your @ alias and it's configured in vite.config.js, this also works:
+// const carouselImages = [
+//   new URL('@/assets/images/carousel1.jpg', import.meta.url).href,
+//   new URL('@/assets/images/carousel2.jpg', import.meta.url).href,
+//   new URL('@/assets/images/carousel3.jpg', import.meta.url).href,
+//   new URL('@/assets/images/carousel4.jpg', import.meta.url).href,
+// ]
+
+// Supplements hero (already fine, but keeping here for clarity)
 const suplementyHero = new URL('@/assets/images/suplementy-hero.jpg', import.meta.url).href
 
 const currentSlide = ref(0)
@@ -319,11 +329,7 @@ const next = () => (currentSlide.value = (currentSlide.value + 1) % carouselImag
 const prev = () => (currentSlide.value = (currentSlide.value - 1 + carouselImages.length) % carouselImages.length)
 const goTo = (i) => (currentSlide.value = i)
 
-onMounted(() => {
-  timerId = setInterval(next, 5000) // auto-play every 5s
-})
-
-onBeforeUnmount(() => {
-  if (timerId) clearInterval(timerId)
-})
+onMounted(() => { timerId = setInterval(next, 5000) })
+onBeforeUnmount(() => { if (timerId) clearInterval(timerId) })
 </script>
+
