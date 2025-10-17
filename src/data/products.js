@@ -57,12 +57,17 @@ export const products = [
   {
     slug: 'sanusdent',
     name: 'Sanusdent',
-    tagline: '',
+    tagline: 'Nepěnivá zubní pasta s klinicky ověřeným neuropeptidem Alaptidem pro péči o dásně a ústní mikroflóru.',
     short:
-      'Nepěnivá, šetrná zubní pasta bez SLS a fluoru. S Alaptidem pro péči o dásně a ústní mikroflóru — ideální pro citlivé zuby.',
+      'Nepěnivá zubní pasta s Alaptidem, která přináší šetrnou a účinnou péči o dásně a ústní mikroflóru. Ideální i po chirurgických zákrocích.',
     type: 'pasta',
     size: '75ml',
-    tags: ['Pasta', 'Bez SLS', 'Citlivé zuby'],
+    tags: [
+      'Klinicky ověřený účinek',
+      'Solná Anti-parodontální ochrana',
+      'Nepění = šetrná a účinná péče',
+      'Bez ústní vody'
+    ],
     hero: img('sanusdent-hero.jpg'),
     theme: {
       from: 'from-copper-accent/20',
@@ -74,29 +79,52 @@ export const products = [
         title: 'Co ji dělá jinou',
         html: `
           <ul class="list-disc ml-6 space-y-1">
-            <li><strong>Nepění</strong> a neobsahuje fluor, laurylsulfát ani agresivní chemikálie.</li>
-            <li>Šetrná abrazivita (odhadované RDA ~25) — vhodné pro každodenní použití a citlivé zuby.</li>
-            <li>Bylinné složení (duběnka, myrha, ratanhia) pro dásně, plus <strong>Alaptid</strong> pro podporu obnovy tkání.</li>
+            <li>Bez Fluoru a pěnidel – šetrná k citlivým dásním.</li>
+            <li>Přírodní složení – duběnka, myrha, ratanhia pro zdravé dásně.</li>
+            <li>Esenciální oleje z hřebíčku a máty pro svěží dech.</li>
+            <li>Alaptid pro regeneraci tkání a rovnováhu ústní mikroflóry.</li>
           </ul>
         `,
       },
       {
-        title: 'Pocit svěžesti',
-        html: `<p>Esenciální oleje z hřebíčku a máty přináší dlouhotrvající svěžest a příjemný komfort při čištění.</p>`,
+        title: 'Sanusdent – pro pocit svěžesti a čistoty',
+        html: `
+          <p>Esenciální oleje z hřebíčku a máty přinášejí dlouhotrvající svěžest a příjemný komfort při čištění. 
+          Hlavní složkou je unikátní tinktura Mygara a směs extraktů z duběnky, myrhy a ratanhiae, které intenzivně pečují o dásně a sliznice.</p>
+          <p>Alaptid je biologicky aktivní neuropeptid, aktivuje regenerační procesy a podporuje přirozenou obnovu tkání. 
+          Šetrná abraziva a chlorhexidin diglukonát udržují rovnováhu ústní mikroflóry.</p>
+          <p>Bez Fluoru a pěnivých látek.</p>
+        `,
       },
       {
         title: 'Inovace a prevence',
         html: `
-          <p>Alaptid pomáhá udržovat zdravou mikroflóru v ústech. V kontextu výzkumu zubních patogenů 
-          (např. <em>Porphyromonas gingivalis</em>) je cílem podpořit péči o dásně a prevenci komplikací.</p>
+          <p>Nepěnivá zubní pasta je revolucí v péči o ústní dutinu díky unikátní účinné látce Alaptid 
+          (neuropeptid inspirovaný přirozenými procesy těla). Tento klinicky ověřený bioaktivní peptid stimuluje regenerační schopnosti tkání 
+          a tím podporuje jejich hojení.</p>
         `,
+      },
+      {
+        title: 'Složení a certifikace',
+        html: `
+          <p><strong>Složení:</strong> Aqua, Glycerin, Hydrated Silica, Kaolin, Magnesium Carbonate, Illite, Xanthan Gum, Montmorillonite, 
+          Zinc Lactate, Quercus Infectoria Fruit Extract, Commiphora Myrrha Resin Extract, Krameria Triandra Root Extract, Alcohol Denat, 
+          Sodium Benzoate, Mentha Piperita Oil, Eugenia Caryophyllus Leaf Oil, Stevioside, Glycyrrhiza Glabra Root Extract, Alaptid, 
+          Chlorhexidine Digluconate, Menthol, Eugenol.</p>
+          <p><strong>Smluvní výrobce:</strong> Česká republika</p>
+          <p><strong>Certifikace:</strong> ISO 22716:2007 / 2008 (GMP pro kosmetiku), ISO 9001:2015 / 2016 (Systém managementu kvality)</p>
+        `,
+      },
+      {
+        title: 'Kde koupit',
+        html: `<p>Naši distributoři – kliknutím přejdete na jejich stránky:</p>`,
       },
     ],
     buyLinks: [
       { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/sanusdent-zubni-pasta-s-alaptidem' },
       { name: 'Zdravé Plody', url: 'https://zdrave-plody.cz/' },
       { name: 'NanoAgTive', url: 'https://www.nanoagtive.cz/sanusdent/' },
-      { name: 'Salveo', url: 'https://www.salveo.cz/zubni-pasta-sanusdent-gaudium-2022-75-ml' },
+      { name: 'Salveo', url: 'https://www.salveo.cz/sanusdent-zubni-pasta-s-alaptidem-gaudium-2022-75-ml' },
       { name: 'Green store', url: 'https://www.greenstore.cz/sanusdent-zubni-pasta-s-alaptidem-75ml' }
     ],
   },
