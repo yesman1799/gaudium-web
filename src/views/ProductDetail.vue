@@ -84,7 +84,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { products } from '@/data/products'
+import { products, getProductBySlug } from '@/data/items'
 import { supplements } from '@/data/supplements'
 
 const props = defineProps({

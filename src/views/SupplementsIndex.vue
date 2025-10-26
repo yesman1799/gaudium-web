@@ -27,5 +27,5 @@
 
 <script setup>
 import ProductCard from '@/components/ProductCard.vue'
-import { supplements } from '@/data/supplements'
+import { supplements } from '@/data/items'
 </script>

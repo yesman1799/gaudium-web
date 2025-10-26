@@ -39,7 +39,7 @@
           <!-- CONTENT -->
           <div class="p-10 flex flex-col gap-6">
             <div>
-              <h3 class="text-3xl font-bold text-forest-dark mb-3">Suplementy / doplňky stravy</h3>
+              <h3 class="text-3xl font-bold text-forest-dark mb-3">Suplementy</h3>
               <p class="text-forest-green/80 mb-8 text-lg leading-relaxed">
                 Prémiové formulace pro <strong>imunitu</strong>, <strong>energii</strong> a <strong>mentální rovnováhu</strong>.
               </p>
@@ -65,7 +65,7 @@
 
 <script setup>
 import ProductCard from '@/components/ProductCard.vue'
-import { products } from '@/data/products'
+import { products } from '@/data/items'
 const suplementyHero = new URL('@/assets/images/suplementy-hero.jpg', import.meta.url).href
 
 </script>

@@ -15,7 +15,6 @@
           <div class="hidden md:flex items-center gap-8">
             <RouterLink to="/" class="nav-link">O nás</RouterLink>
             <RouterLink to="/produkty" class="nav-link">Produkty</RouterLink>
-            <a href="#science" class="nav-link">Věda</a>
             <RouterLink to="/contact" class="nav-link">Kontakt</RouterLink>
 
             <RouterLink
