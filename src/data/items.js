@@ -14,9 +14,9 @@ export const items = [
     type: 'gel',
     size: '15ml',
     hero: img('formamnon-hero.jpg'),
-    tagline: '',
+    tagline: 'Regenerační gel proti dermatomykózám.',
     short:
-      'Jednoduché složení, vysoká účinnost. Gel s Alaptidem pro cílenou péči při dermatomykózách a dalších kožních potížích.',
+      'Genialita v jednoduchosti: pouze 7 složek. Alaptid + byliny pro péči při dermatomykózách a dalších kožních potížích.',
     tags: ['Gel', 'Alaptid', 'Cílená péče'],
     theme: {
       from: 'from-mint-light/20',
@@ -27,26 +27,34 @@ export const items = [
       {
         title: 'Proč Formamnon',
         html: `
-          <p><strong>Genialita v jednoduchosti:</strong> pouze sedm pečlivě zvolených složek pro maximální účinek a bezpečnost. 
-          Produkt vznikl pod vedením dermatologa s více než 40 lety praxe.</p>
+          <p><strong>Genialita v jednoduchosti:</strong> pouze 7 pečlivě zvolených složek pro vysokou účinnost a bezpečnost.</p>
           <ul class="list-disc ml-6 mt-3 space-y-1">
-            <li>Úleva při <em>dermatomykózách</em> i celé řadě dalších kožních potíží po těle.</li>
-            <li>Kombinuje bylinné extrakty (např. xylopie, tea tree, šalvěj) a neuropeptid <strong>Alaptid</strong>.</li>
-            <li>Konzervační složka se <em>stříbrem</em> (JM Active care) pro podporu antimikrobiální účinnosti.</li>
+            <li><strong>Alaptid</strong> – aktivace přirozené obnovy a rychlé hojení.</li>
+            <li><strong>Tea tree olej</strong> – silný přírodní antiseptik.</li>
+            <li><strong>Šalvěj</strong> – tradiční bylina proti infekcím.</li>
+            <li><strong>Xylopie</strong> – africká rostlina s antimykotickým účinkem.</li>
+            <li><strong>Bez agresivní chemie</strong> – šetrné k pokožce, účinné proti plísním.</li>
           </ul>
+          <p class="mt-3">Účinek posiluje konzervační systém se stříbrem (JM Active care).</p>
         `,
       },
       {
         title: 'Jak funguje',
         html: `
-          <p>Synergie přírodních látek s Alaptidem podporuje regeneraci a zklidnění pokožky; jednoduché složení napomáhá skvělé snášenlivosti. 
-          Ověřeno v praxi u mnoha pacientů.</p>
+          <p>Synergie přírodních extraktů a Alaptidu zacílí na mykotické i další kožní problémy. Ověřeno v praxi u mnoha pacientů.</p>
         `,
       },
       {
         title: 'Použití',
         html: `
-          <p>Aplikujte 2× denně na čistou a osušenou pokožku po dobu 2–4 týdnů nebo dle potřeby.</p>
+          <p>Aplikujte 2× denně na čistou a osušenou pokožku 2–4 týdny (nebo dle potřeby). Airless balení 15&nbsp;ml pro rychlé použití.</p>
+        `,
+      },
+      {
+        title: 'Složení & certifikace',
+        html: `
+          <p>Aktivní: Alaptid, šalvěj, xylopie, tea tree olej + pomocné složky a JMAC (stříbro).</p>
+          <p>V souladu s Nařízením (ES) č. 1223/2009; certifikace a bezpečnostní zpráva u výrobce.</p>
         `,
       },
     ],
@@ -68,7 +76,7 @@ export const items = [
     hero: img('sanusdent-hero.jpg'),
     tagline: 'Nepěnivá zubní pasta s klinicky ověřeným neuropeptidem Alaptidem pro péči o dásně a ústní mikroflóru.',
     short:
-      'Nepěnivá zubní pasta s Alaptidem, která přináší šetrnou a účinnou péči o dásně a ústní mikroflóru. Ideální i po chirurgických zákrocích.',
+      'Nepěnivá pasta s Alaptidem a tinkturou Mygara. Bez fluoru a SLS; jemná abraziva; respekt k mikroflóře; svěžest hřebíčku a máty.',
     tags: [
       'Klinicky ověřený účinek',
       'Solná Anti-parodontální ochrana',
@@ -86,7 +94,7 @@ export const items = [
         html: `
           <ul class="list-disc ml-6 space-y-1">
             <li>Bez Fluoru a pěnidel – šetrná k citlivým dásním.</li>
-            <li>Přírodní složení – duběnka, myrha, ratanhia pro zdravé dásně.</li>
+            <li>Přírodní složení – duběnka, myrha, ratanhia (tinktura Mygara).</li>
             <li>Esenciální oleje z hřebíčku a máty pro svěží dech.</li>
             <li>Alaptid pro regeneraci tkání a rovnováhu ústní mikroflóry.</li>
           </ul>
@@ -99,7 +107,7 @@ export const items = [
           Hlavní složkou je unikátní tinktura Mygara a směs extraktů z duběnky, myrhy a ratanhiae, které intenzivně pečují o dásně a sliznice.</p>
           <p>Alaptid je biologicky aktivní neuropeptid, aktivuje regenerační procesy a podporuje přirozenou obnovu tkání. 
           Šetrná abraziva a chlorhexidin diglukonát udržují rovnováhu ústní mikroflóry.</p>
-          <p>Bez Fluoru a pěnivých látek.</p>
+          <p>Bez Fluoru a pěnivých látek; odhad RDA ~25.</p>
         `,
       },
       {
@@ -107,23 +115,18 @@ export const items = [
         html: `
           <p>Nepěnivá zubní pasta je revolucí v péči o ústní dutinu díky unikátní účinné látce Alaptid 
           (neuropeptid inspirovaný přirozenými procesy těla). Tento klinicky ověřený bioaktivní peptid stimuluje regenerační schopnosti tkání 
-          a tím podporuje jejich hojení.</p>
+          a tím podporuje jejich hojení. Edukačně: bakterie <em>P. gingivalis</em> je spojována s neurodegenerací; péče o dutinu ústní má smysl.</p>
         `,
       },
       {
         title: 'Složení a certifikace',
         html: `
-          <p><strong>Složení:</strong> Aqua, Glycerin, Hydrated Silica, Kaolin, Magnesium Carbonate, Illite, Xanthan Gum, Montmorillonite, 
+          <p><strong>INCI:</strong> Aqua, Glycerin, Hydrated Silica, Kaolin, Magnesium Carbonate, Illite, Xanthan Gum, Montmorillonite, 
           Zinc Lactate, Quercus Infectoria Fruit Extract, Commiphora Myrrha Resin Extract, Krameria Triandra Root Extract, Alcohol Denat, 
           Sodium Benzoate, Mentha Piperita Oil, Eugenia Caryophyllus Leaf Oil, Stevioside, Glycyrrhiza Glabra Root Extract, Alaptid, 
           Chlorhexidine Digluconate, Menthol, Eugenol.</p>
-          <p><strong>Smluvní výrobce:</strong> Česká republika</p>
-          <p><strong>Certifikace:</strong> ISO 22716:2007 / 2008 (GMP pro kosmetiku), ISO 9001:2015 / 2016 (Systém managementu kvality)</p>
+          <p><strong>Smluvní výrobce:</strong> Česká republika | <strong>Certifikace:</strong> ISO 22716:2007/2008, ISO 9001:2015/2016</p>
         `,
-      },
-      {
-        title: 'Kde koupit',
-        html: `<p>Naši distributoři – kliknutím přejdete na jejich stránky:</p>`,
       },
     ],
     buyLinks: [
@@ -140,37 +143,44 @@ export const items = [
     slug: 'gloria',
     name: 'Gloria',
     type: 'kosmetika',
-    size: '',
+    size: '200ml',
     hero: img('gloria-hero.jpg'),
-    tagline: '',
+    tagline: 'Regenerační tělové mléko s Alaptidem.',
     short:
-      'Hydratační řada s Alaptidem – denní krém a tělové mléko pro hebkou, dlouhodobě vyživenou pokožku.',
-    tags: ['Denní krém', 'Tělové mléko', 'Hydratace'],
+      'Český Alaptid – bioaktivní neuropeptid pro intenzivní regeneraci. Černuchový olej, hamamelis, bambucké máslo a celodenní péče.',
+    tags: ['Tělové mléko', 'Hydratace', 'Regenerace'],
     theme: {
       from: 'from-mint-light/20',
       to: 'to-warm-beige/40',
       accent: 'bg-mint-light/20 text-forest-green',
     },
-    variants: [
-      { key: 'krem', label: 'Denní krém', size: '50ml', short: 'Lehký, rychle se vstřebává, pod make-up.' },
-      { key: 'mleko', label: 'Tělové mléko', size: '200ml', short: 'Celodenní hebkost bez lepivosti.' },
-    ],
     sections: [
       {
-        title: 'Charakteristika',
+        title: 'O produktu',
         html: `
-          <p>Moderní hydratační základ s Alaptidem a rostlinnými oleji pro podporu kožní bariéry a příjemný pocit bez zátěže. 
-          Ideální pro každodenní použití i citlivou pleť.</p>
+          <p><strong>Český Alaptid</strong> – bio-aktivní neuropeptid pro intenzivní regeneraci.</p>
+          <p><strong>Černuchový olej</strong> – tradice starého Egypta pro výživu a hydrataci.</p>
+          <p><strong>Hamamelis</strong> – přírodní adstringens ze Severní Ameriky.</p>
+          <p><strong>Bambucké máslo</strong> – posílení odolnosti a ochrana pokožky.</p>
+          <p><strong>Celodenní péče</strong> – vhodné pro každodenní použití.</p>
+          <p class="mt-2 italic">Kde tradice potkává vědu. Pro pleť pružnou, zdravou a krásnou.</p>
         `,
       },
       {
-        title: 'Výhody',
+        title: 'Popis',
         html: `
-          <ul class="list-disc ml-6 space-y-1">
-            <li>Dlouhodobá hydratace a zklidnění</li>
-            <li>Rychlé vstřebávání, sametový finiš</li>
-            <li>Vhodné pro široké spektrum typů pokožky</li>
-          </ul>
+          <p>Tento přípravek je určený k celodenní péči o pleť. Obsahuje složky s účinkem regeneračním a adstringentním. 
+          Olej z černuchy je užíván již od dob starého Egypta. Hamamelis používali odedávna přírodní národy Severní Ameriky 
+          a původem český Alaptid je předvojem v trendu využívání biologicky aktivních neuropeptidů v kosmetice. 
+          Bambucké máslo zlepšuje odolnost pokožky a černuchový olej ji vyživuje a hydratuje.</p>
+        `,
+      },
+      {
+        title: 'Složení',
+        html: `
+          <p><strong>INCI:</strong> Aqua, Caprylic/Capric Triglyceride, Glycerin, Butyrospermum Parkii Butter, Nigella Sativa Seed Oil,
+          Glycine Soja Seed Extract, Xanthan Gum, Phenoxyethanol, Alcohol Denat., Sclerotium Gum, Lecithin, Pullulan, Alaptide, Tocopheryl Acetate,
+          Parfum, Hamamelis Virginiana Leaf Extract, Disodium EDTA, Ethylhexylglycerin, Silica, Hexamethylindanopyran, Tetramethyl Acetyloctahydronaphthalenes.</p>
         `,
       },
     ],

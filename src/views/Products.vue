@@ -3,15 +3,28 @@
   <section class="pt-36 pb-24 bg-warm-beige min-h-screen">
     <div class="max-w-7xl mx-auto px-6">
       <!-- Headline -->
-      <div v-on-view class="text-center mb-20 slide-in">
+      <div v-on-view class="text-center mb-24 slide-in">
         <div class="inline-block bg-mint-light/20 text-forest-green px-6 py-3 rounded-full text-sm font-semibold mb-8">
           NAŠE PRODUKTY
         </div>
-        <h1 class="text-5xl font-bold text-gradient mb-8">Alaptid kolekce</h1>
-        <p class="text-xl text-forest-green/70 max-w-3xl mx-auto">
-          Každý produkt staví na našem <strong>Alaptid komplexu</strong> a chytré kombinaci přírodních extraktů.
-          Jednoduché složení, vysoká snášenlivost a výsledky ověřené praxí — to je péče, která dává smysl.
-        </p>
+
+        <!-- upravený headline -->
+        <h2 class="text-5xl md:text-6xl font-bold text-gradient mb-10 leading-tight">
+          Alaptid — srdce našich produktů
+        </h2>
+
+        <div class="max-w-4xl mx-auto text-forest-green/80 text-lg md:text-xl leading-relaxed space-y-5">
+          <p>
+            <strong>Alaptid</strong> je bio-aktivní peptid českého původu, který představuje novou generaci účinných látek
+            v kosmetice a péči o tělo. Aktivuje přirozené regenerační mechanismy organismu – podporuje obnovu buněk,
+            zklidňuje podráždění a urychluje hojení postižených míst.
+          </p>
+          <p>
+            Na rozdíl od běžných kosmetických přísad nepůsobí pouze povrchově, ale stimuluje vlastní regenerační procesy těla.
+            Proto je Alaptid klíčovou složkou všech našich vlajkových produktů – od péče o dásně přes regeneraci pleti až
+            po řešení kožních problémů.
+          </p>
+        </div>
       </div>
 
       <!-- Grid karet -->
@@ -59,6 +72,7 @@
           </div>
         </RouterLink>
       </div>
+
     </div>
   </section>
 </template>
@@ -67,5 +81,4 @@
 import ProductCard from '@/components/ProductCard.vue'
 import { products } from '@/data/items'
 const suplementyHero = new URL('@/assets/images/suplementy-hero.jpg', import.meta.url).href
-
 </script>
