@@ -37,7 +37,9 @@
 
             <!-- H1 -->
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-5 sm:mb-7 lg:mb-6 leading-tight text-forest-dark">
-              Gaudium&nbsp;2022
+              <span class="text-gradient">Příroda</span><br />
+              <span class="text-forest-green">&amp; Věda</span><br />
+              <span class="text-mint-light">v harmonii</span>
             </h1>
 
             <!-- Lead -->
