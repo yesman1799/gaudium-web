@@ -15,14 +15,14 @@
 
         <div class="max-w-4xl mx-auto text-forest-green/80 text-lg md:text-xl leading-relaxed space-y-5">
           <p>
-            <strong>Alaptid</strong> je bio-aktivní peptid českého původu, který představuje novou generaci účinných látek
-            v kosmetice a péči o tělo. Aktivuje přirozené regenerační mechanismy organismu – podporuje obnovu buněk,
-            zklidňuje podráždění a urychluje hojení postižených míst.
-          </p>
+            <strong>Alaptid</strong> je pokrokový bio-aktivní neuropeptid českého původu, který se vyznačuje
+            výjimečnými kosmetickými vlastnostmi. Pomocí svého unikátního mechanismu
+            působení podporuje přirozený vzhled pokožky a přispívá k pocitu komfortu a svěžesti.
+            </p>
           <p>
-            Na rozdíl od běžných kosmetických přísad nepůsobí pouze povrchově, ale stimuluje vlastní regenerační procesy těla.
-            Proto je Alaptid klíčovou složkou všech našich vlajkových produktů – od péče o dásně přes regeneraci pleti až
-            po řešení kožních problémů.
+            Alaptid se liší od běžných kosmetických přísad svou inovativní recepturou a je
+            součástí všech našich prémiových produktů – pro komplexní péči o pokožku a ústní
+            dutinu.
           </p>
         </div>
       </div>

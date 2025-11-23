@@ -49,7 +49,7 @@ export const products = [
     buyLinks: [
       { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/formamnon-s-alaptidem-na-kozni-infekce' },
       { name: 'Zdravé Plody', url: 'https://zdrave-plody.cz/' },
-      { name: 'NanoAgTive', url: 'https://www.nanoagtive.cz/formamnon/' },
+      { name: 'NanoShop', url: 'https://www.nanoagtive.cz/formamnon/' },
       { name: 'Salveo', url: 'https://www.salveo.cz/formamnon-gel-na-kuzi-s-alaptidem-gaudium-2022-15-ml' },
       { name: 'Green store', url: 'https://www.greenstore.cz/formamnon-gel-na-kuzi-s-alaptidem-15mll' }
     ],
@@ -123,7 +123,7 @@ export const products = [
     buyLinks: [
       { name: 'Detoxikace Brno', url: 'https://www.detoxikace-brno.cz/sanusdent-zubni-pasta-s-alaptidem' },
       { name: 'Zdravé Plody', url: 'https://zdrave-plody.cz/' },
-      { name: 'NanoAgTive', url: 'https://www.nanoagtive.cz/sanusdent/' },
+      { name: 'NanoShop', url: 'https://www.nanoagtive.cz/sanusdent/' },
       { name: 'Salveo', url: 'https://www.salveo.cz/sanusdent-zubni-pasta-s-alaptidem-gaudium-2022-75-ml' },
       { name: 'Green store', url: 'https://www.greenstore.cz/sanusdent-zubni-pasta-s-alaptidem-75ml' }
     ],

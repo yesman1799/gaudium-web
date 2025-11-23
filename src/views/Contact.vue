@@ -7,9 +7,8 @@
         <div class="inline-block bg-mint-light/20 text-forest-green px-6 py-2 rounded-full text-sm font-semibold mb-6">
           KONTAKTUJTE NÁS
         </div>
-        <h1 class="text-5xl font-bold text-gradient mb-4">Jsme tu pro vás</h1>
         <p class="text-lg text-forest-green/80 max-w-3xl mx-auto">
-          Máte dotaz k produktům nebo spolupráci? Napište nám – odpovíme co nejdříve.
+          Máte dotaz k produktům nebo spolupráci? Napište nám
         </p>
       </div>
 
@@ -22,7 +21,7 @@
               <span class="text-white font-bold text-xl">G</span>
             </div>
             <div>
-              <h2 class="text-2xl font-bold text-forest-dark">Gaudium – Natural Science</h2>
+              <h2 class="text-2xl font-bold text-forest-dark">Gaudium 2022</h2>
               <p class="text-forest-green/70 text-sm">Síla přírody podpořená vědou</p>
             </div>
           </div>
