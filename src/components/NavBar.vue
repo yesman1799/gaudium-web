@@ -17,11 +17,13 @@
             <RouterLink to="/produkty" class="nav-link">Produkty</RouterLink>
             <RouterLink to="/contact" class="nav-link">Kontakt</RouterLink>
 
-            <RouterLink
-              to="/produkty"
+            <a
+              href="https://www.eshopgaudium2022.cz/"
+              target="_blank"
+              rel="noopener noreferrer"
               class="hidden lg:inline-block bg-gradient-to-r from-forest-green to-mint-light text-white px-5 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
-              Objednat
-            </RouterLink>
+              E-shop
+            </a>
           </div>
 
           <!-- MOBILE BUTTON -->
@@ -58,12 +60,14 @@
             <a href="#science" class="mobile-link" @click="close()">Věda</a>
             <RouterLink to="/contact" class="mobile-link" @click="close()">Kontakt</RouterLink>
 
-            <RouterLink
-              to="/produkty"
+            <a
+              href="https://www.eshopgaudium2022.cz/"
+              target="_blank"
+              rel="noopener noreferrer"
               class="mt-2 bg-gradient-to-r from-forest-green to-mint-light text-white px-5 py-3 rounded-xl font-semibold text-center"
               @click="close()">
-              Objednat
-            </RouterLink>
+              E-shop
+            </a>
           </div>
         </div>
       </div>

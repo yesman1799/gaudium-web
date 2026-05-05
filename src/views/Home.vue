@@ -54,6 +54,14 @@
               >
                 Prozkoumat produkty
               </RouterLink>
+              <a
+                href="https://www.eshopgaudium2022.cz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-white/90 hover:bg-white text-forest-green border-2 border-forest-green px-8 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:shadow-xl transform hover:scale-105 transition-all text-center"
+              >
+                E-shop
+              </a>
               <!-- odkaz na vědecké studie byl na přání klienta odstraněn -->
             </div>
           </div>
